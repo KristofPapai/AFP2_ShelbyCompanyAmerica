@@ -16,7 +16,26 @@ class MainController extends Controller
     public function options(){
         return view('options');
     }
+    public function useroptions(){
+        return view('user_options');
+    }
+    public function courseoptions(){
+        return view('course_options');
+    }
+    function useroptionscheck(Request $request){
+        //TODO: Adatbázisban megváltoztatni az értékeket
+        if($request->filled('new_password' )&&$request->filled('new_auth')) {
 
+        }
+        else if($request->filled('new_auth')){
+
+        }
+        else if($request->filled('new_password')){
+
+        }
+        return view('user_options');
+
+    }
     function checklogin(Request $request)
     {
         $this->validate($request, [
@@ -41,6 +60,10 @@ class MainController extends Controller
     }
     //TODO: Az adatbázison végigmegy a neptun kódokért majd ha a jelszavaknál egyezést talál megváltoztatja az újra
     function checkpassword (Request $request) {
+
+    }
+    //TODO: insert into diák kurzus
+    function checkcourse(Request $request) {
 
     }
     function successlogin()

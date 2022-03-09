@@ -15,7 +15,6 @@ use App\Http\Middleware\LoggedInMiddleware;
 |
 */
 Route::group(['middleware' => 'web'], function () {
-    ///your routes goes here
     Route::group(['middleware' => [LoggedInMiddleware::class]], function() {
         Route::get('/', [MainController::class, 'main']);
         Route::get('/main', [MainController::class, 'main']);
@@ -23,6 +22,9 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/login', [MainController::class, 'login']);
         Route::get('/logout', [MainController::class, 'logout']);
         Route::get('/options', [MainController::class, 'options'])->name('options');
+        Route::get('/useroptions', [MainController::class, 'useroptions'])->name('useroptions');
+        Route::get('/courseoptions', [MainController::class, 'courseoptions'])->name('courseoptions');
+        Route::post('/useroptionscheck', [MainController::class, 'useroptionscheck']);
     });
 
     Route::group(['middleware' => [GuestMiddleware::class]], function() {

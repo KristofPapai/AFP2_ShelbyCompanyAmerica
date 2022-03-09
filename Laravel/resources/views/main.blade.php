@@ -8,6 +8,9 @@
     <title>E-Learning</title>
 </head>
 <body>
+<?php
+    $auth = Auth::user()->auth;
+?>
 <!--TODO: Navbar(?)-->
     <div>
         <!--TODO: Dinamikus dropdown kurzusok-->
@@ -19,6 +22,11 @@
             <option hidden value="" disabled selected>Beállítások</option>
             <optgroup label="Alap beállítások">
                 <option value="{{route('options')}}">Beállítások</option>
+            </optgroup>
+            <!--TODO: Jogosultság ellenőrzés-->
+            <optgroup label="Felhasználó beállítások">
+                <option value="{{asset('courseoptions')}}">Kurzus hozzárendelés</option>
+                <option value="{{asset('useroptions')}}">Beállítások</option>
             </optgroup>
         </select>
         <a href="{{asset('logout')}}">Kijelentkezés</a>

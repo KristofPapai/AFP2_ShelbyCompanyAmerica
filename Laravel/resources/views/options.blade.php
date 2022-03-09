@@ -13,7 +13,7 @@
     $name = AUTH::user()->diak_nev;
 ?>
 <div>
-    <form method="post" action='/checkpassword'>
+    <form show method="post" action='/checkpassword'>
         @csrf
         Neptun-Kód <input type="text" name="neptun_kod" required value={{$neptun}}><br></br>
         Név: <input type="text" name="name" required value={{$name}}><br></br>
