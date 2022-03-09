@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('diaks', function (Blueprint $table) {
             $table->string('neptun_kod');
             $table->string('diak_nev');
             $table->string('password');
+            $table->rememberToken();
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('diaks');
     }
 };

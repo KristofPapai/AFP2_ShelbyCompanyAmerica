@@ -8,10 +8,18 @@
     <title>E-Learning</title>
 </head>
 <body>
-<select>
-    <option value="Kurzusok">Kurzusok</option>}
-    //TODO N&B: Dinamikus dropdown kurzusok
-    //TODO K: Navbar(?)
-</select>
+    <div>
+        <select>
+            <option value="Kurzusok">Kurzusok</option>}
+            //TODO N&B: Dinamikus dropdown kurzusok
+            //TODO K: Navbar(?)
+        </select>
+        <form method="post" action='/logout'>
+            @csrf
+            <input type="submit" name="logout" value="Kijelentkezés">
+        </form>
+
+    </div>
+
 </body>
 </html>
