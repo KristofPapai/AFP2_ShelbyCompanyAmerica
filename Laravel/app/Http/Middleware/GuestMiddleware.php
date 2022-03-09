@@ -10,7 +10,7 @@ class GuestMiddleware
 {
     public function handle($request, Closure $next)
     {
-        if (Auth::check()==true)
+        if (Auth::check())
             return redirect('/');
 
         return $next($request);

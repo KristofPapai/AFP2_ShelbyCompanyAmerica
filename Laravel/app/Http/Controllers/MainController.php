@@ -3,6 +3,7 @@ namespace  App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
+use Session;
 
 class MainController extends Controller
 {
@@ -43,9 +44,8 @@ class MainController extends Controller
 
     function logout()
     {
-
+        Session::flush();
         Auth::logout();
-        \Session::flush();
         return redirect('/login');
     }
 

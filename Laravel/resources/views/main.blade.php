@@ -8,18 +8,13 @@
     <title>E-Learning</title>
 </head>
 <body>
+<!--TODO: Navbar(?)-->
     <div>
+        <!--TODO: Dinamikus dropdown kurzusok-->
         <select>
             <option value="Kurzusok">Kurzusok</option>}
-            //TODO N&B: Dinamikus dropdown kurzusok
-            //TODO K: Navbar(?)
         </select>
-        <form method="post" action='/logout'>
-            @csrf
-            <input type="submit" name="logout" value="Kijelentkezés">
-        </form>
-
+        <a href="{{asset('logout')}}">Kijelentkezés</a>
     </div>
-
 </body>
 </html>

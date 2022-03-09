@@ -10,7 +10,7 @@ class LoggedInMiddleware
 {
     public function handle($request, Closure $next)
     {
-        if (Auth::check()==false)
+        if (!Auth::check())
             return redirect('/login');
 
         return $next($request);
