@@ -14,7 +14,15 @@
         <select>
             <option value="Kurzusok">Kurzusok</option>}
         </select>
+        <!--TODO: Jogosultság alapú beállítás megjelenítések-->
+        <select onchange="window.location.href=this.value;">
+            <option hidden value="" disabled selected>Beállítások</option>
+            <optgroup label="Alap beállítások">
+                <option value="{{route('options')}}">Beállítások</option>
+            </optgroup>
+        </select>
         <a href="{{asset('logout')}}">Kijelentkezés</a>
     </div>
+
 </body>
 </html>

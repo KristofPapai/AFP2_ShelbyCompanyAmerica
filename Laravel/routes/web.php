@@ -22,6 +22,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/main', [MainController::class, 'main']);
         Route::get('/login', [MainController::class, 'login']);
         Route::get('/logout', [MainController::class, 'logout']);
+        Route::get('/options', [MainController::class, 'options'])->name('options');
     });
 
     Route::group(['middleware' => [GuestMiddleware::class]], function() {

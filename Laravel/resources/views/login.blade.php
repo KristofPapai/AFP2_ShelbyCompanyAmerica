@@ -12,8 +12,8 @@
 ?>
 <form method="post" action='/checklogin'>
     @csrf
-    Neptun-kód: <input type="text" name="neptun_kod" value=""><br></br>
-    Jelszó: <input type="password" name="password" value=""><br></br>
+    Neptun-kód: <input type="text" name="neptun_kod" required value=""><br></br>
+    Jelszó: <input type="password" name="password" required value=""><br></br>
 <input type="submit" name="submit" value="Belépés">
 </form>
 </body>

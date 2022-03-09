@@ -17,6 +17,7 @@ class diak extends Authenticatable
      * @var array<int, string>
      */
     protected $primaryKey = 'neptun_kod';
+    public $incrementing = false;
     protected $fillable = [
         'neptun_kod',
         'password',

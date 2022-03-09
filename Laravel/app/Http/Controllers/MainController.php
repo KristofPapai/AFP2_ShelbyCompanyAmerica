@@ -13,6 +13,9 @@ class MainController extends Controller
     public function main(){
         return view('main');
     }
+    public function options(){
+        return view('options');
+    }
 
     function checklogin(Request $request)
     {
@@ -36,7 +39,10 @@ class MainController extends Controller
         }
 
     }
+    //TODO: Az adatbázison végigmegy a neptun kódokért majd ha a jelszavaknál egyezést talál megváltoztatja az újra
+    function checkpassword (Request $request) {
 
+    }
     function successlogin()
     {
         return view('main');
