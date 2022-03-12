@@ -47,6 +47,8 @@
                 <option value="{{asset('useroptions')}}">Beállítások</option>
             </optgroup>
         </select>
+        <a href="{{asset('logout')}}">Kijelentkezés</a>
+
       </li>
       
 <h2 class=""></h2>
