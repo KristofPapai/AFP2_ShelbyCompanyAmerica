@@ -54,6 +54,7 @@ class MainController extends Controller
         }
         else
         {
+            dd($diak);
             return back()->with('error', 'Wrong Login Details');
         }
 

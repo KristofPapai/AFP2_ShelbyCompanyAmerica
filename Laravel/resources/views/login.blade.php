@@ -32,14 +32,15 @@
         </section>
 
         <section class="mt-10">
-            <form class="flex flex-col" method="POST" action='/checklogin'>
+            <form class="flex flex-col" method="post" action='/checklogin'>
+                @csrf
                 <div class="mb-6 pt-3 rounded bg-gray-200">
-                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="email">Email</label>
-                    <input type="text" id="neptun_kod" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" required value="">
+                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="neptun_kod">Email</label>
+                    <input type="text" id="neptun_kod" name="neptun_kod" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" required value="">
                 </div>
                 <div class="mb-6 pt-3 rounded bg-gray-200">
                     <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="password">Jelszó</label>
-                    <input type="password" id="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" required value="">
+                    <input type="password" id="password" name="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" required value="">
                 </div>
                 <div class="flex justify-end">
                     <a href="#" class="text-sm text-purple-600 hover:text-purple-700 hover:underline mb-6">Elfelejtette jelszavát?</a>
