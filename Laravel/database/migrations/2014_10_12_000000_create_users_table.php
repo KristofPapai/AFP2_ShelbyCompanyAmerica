@@ -14,9 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->string('neptun_kod');
-            $table->string('diak_nev');
+            $table->string('neptun');
             $table->string('password');
+            $table->string('name');
+            $table->tinyInteger('legitimacy');
+            $table->rememberToken();
+
         });
     }
 

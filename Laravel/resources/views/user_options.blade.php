@@ -24,7 +24,7 @@
 <div>
     <form method="post" action='/useroptionscheck'>
         @csrf
-        Neptun-Kód <input type="text" name="neptun_kod" required value=""><br></br>
+        Neptun-Kód <input type="text" name="neptun" required value=""><br></br>
         Név: <input type="text" name="name" required value=""><br></br>
         Új jelszó: <input id="password_change" disabled type="password"  name="new_password" required value="">
         <input name="password" onclick="enablePass()" id="password" type="checkbox"><br></br>

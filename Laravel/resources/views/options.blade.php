@@ -9,13 +9,13 @@
 </head>
 <body>
 <?php
-    $neptun = AUTH::user()->neptun_kod;
-    $name = AUTH::user()->diak_nev;
+    $neptun = AUTH::user()->neptun;
+    $name = AUTH::user()->name;
 ?>
 <div>
     <form show method="post" action='/checkpassword'>
         @csrf
-        Neptun-Kód <input type="text" name="neptun_kod" required value={{$neptun}}><br></br>
+        Neptun-Kód <input type="text" name="neptun" required value={{$neptun}}><br></br>
         Név: <input type="text" name="name" required value={{$name}}><br></br>
         Régi jelszó: <input type="password"  name="old_password" required value=""><br></br>
         Új jelszó: <input type="password" name="new_password" required value=""><br></br>

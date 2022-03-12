@@ -48,7 +48,7 @@
         </select>
         <input disabled id="courseMultSubmit" type="submit" name="submit" value="Hozzárendelés">
         <input id="Mult" name="courseMult" onclick="enableMultUpl()" type="checkbox"><br></br>
-        Neptun-Kód <input disabled id="courseSinglNeptun" type="text" name="neptun_kod" required value="">
+        Neptun-Kód <input disabled id="courseSinglNeptun" type="text" name="neptun" required value="">
         Kurzus
         <!--TODO: dinamikus kurzus dropdown a tanár szempontjából-->
         <select disabled id="courseSinglCourse">

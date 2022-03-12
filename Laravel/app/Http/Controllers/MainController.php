@@ -39,15 +39,15 @@ class MainController extends Controller
     function checklogin(Request $request)
     {
         $this->validate($request, [
-            'neptun_kod'   => ['required'],
+            'neptun'   => ['required'],
             'password'  => ['required','min:3']
         ]);
-        $diak = array(
-            'neptun_kod' => $request->get('neptun_kod'),
+        $user = array(
+            'neptun' => $request->get('neptun'),
             'password' => $request->get('password'),
         );
 
-        if(Auth::attempt($diak))
+        if(Auth::attempt($user))
         {
             //dd(Auth::check());
             return redirect('/main');
