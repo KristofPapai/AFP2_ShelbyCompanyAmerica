@@ -22,6 +22,9 @@ class MainController extends Controller
     public function courseoptions(){
         return view('course_options');
     }
+    public function register(){
+        return view('register');
+    }
     function useroptionscheck(Request $request){
         //TODO: Adatbázisban megváltoztatni az értékeket
         if($request->filled('new_password' )&&$request->filled('new_auth')) {
@@ -74,7 +77,7 @@ class MainController extends Controller
         );
         if (Auth::attempt($user))
         {
-            return redirect('/main');
+            return redirect('/login');
         }
         else
         {

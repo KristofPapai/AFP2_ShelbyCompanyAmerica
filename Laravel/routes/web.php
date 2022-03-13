@@ -29,7 +29,9 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::group(['middleware' => [GuestMiddleware::class]], function() {
         Route::get('/login', [MainController::class, 'login']);
+        Route::get('/register', [MainController::class,'register']);
         Route::post('/checklogin', [MainController::class, 'checklogin']);
+        Route::post('/checkregister', [MainController::class, 'checkregister']);
     });
 });
 
