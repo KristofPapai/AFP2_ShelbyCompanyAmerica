@@ -58,6 +58,29 @@ class MainController extends Controller
         }
 
     }
+    function checkregister(Request $request){
+        $this->validate($request, [
+            'name' => ['required'],
+            'password' => ['required'],
+            'password_again' => ['required']
+        ]);
+        if ($request->get('password') != $request->get('password_again'))
+        {
+            return back()->with('error', 'Passwords not matching');
+        }
+        $user = array(
+            'name' => $request->get('name'),
+            'password' => $request->get('password')
+        );
+        if (Auth::attempt($user))
+        {
+            return redirect('/main');
+        }
+        else
+        {
+            return back()->with('error','Wrong Registration Details');
+        }
+    }
     //TODO: Az adatbázison végigmegy a neptun kódokért majd ha a jelszavaknál egyezést talál megváltoztatja az újra
     function checkpassword (Request $request) {
 
