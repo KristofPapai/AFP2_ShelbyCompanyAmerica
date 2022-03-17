@@ -3,6 +3,7 @@ namespace  App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Auth;
 use Session;
 
@@ -48,9 +49,8 @@ class MainController extends Controller
         ]);
         $user = array(
             'neptun' => $request->get('neptun'),
-            'password' => $request->get('password'),
+            'password' => $request->get('password')
         );
-
         if(Auth::attempt($user))
         {
             //dd(Auth::check());
@@ -74,11 +74,16 @@ class MainController extends Controller
         }
         $user = array(
             'neptun' => $this->generateNeptun(),
-            'password' => $request->get('password'),
-            'name' => $request->get('name'),
+            'password' => Hash::make($request->get('password')),
+            'name' => $request->get('name')
         );
         DB::insert('insert into users (neptun, password, name) values (?,?,?)', [$user['neptun'], $user['password'], $user['name']]);
-        if (Auth::attempt($user))
+        $login = array(
+            'neptun' => $user['neptun'],
+            'password' => $request->get('password'),
+            'name' => $request->get('name')
+        );
+        if (Auth::attempt($login))
         {
             return redirect('/main');
         }
