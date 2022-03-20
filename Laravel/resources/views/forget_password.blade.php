@@ -31,7 +31,7 @@
     </section>
 
     <section class="mt-10">
-        <form class="flex flex-col" method="post" action='/'>
+        <form class="flex flex-col" method="post" action='/change_password'>
             @csrf
             <div class="mb-6 pt-3 rounded bg-gray-200">
                 <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="neptun">Neptun-kód</label>
@@ -41,7 +41,7 @@
                 <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="password">Jelszó</label>
                 <input type="password" id="password" name="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" required value="">
             </div>
-            <div class="flex justify-end">
+            <div class="mb-6 pt-3 rounded bg-gray-200">
                 <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="password">Jelszó újra</label>
                 <input type="password" id="password_again" name="password_again" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" required value="">
             </div>
