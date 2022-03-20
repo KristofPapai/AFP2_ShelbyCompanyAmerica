@@ -30,6 +30,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::group(['middleware' => [GuestMiddleware::class]], function() {
         Route::get('/login', [MainController::class, 'login']);
         Route::post('/checklogin', [MainController::class, 'checklogin']);
+        Route::get('/sendemail', [MainController::class, 'sendemail']);
+        Route::post('/send_email', [MainController::class, 'send_email']);
+        Route::get('/forget_password',[MainController::class, 'forget_password']);
+        Route::post('/change_password', [MainController::class, 'change_password']);
     });
 });
 
