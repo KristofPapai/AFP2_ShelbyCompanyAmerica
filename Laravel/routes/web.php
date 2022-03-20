@@ -34,6 +34,8 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/send_email', [MainController::class, 'send_email']);
         Route::get('/forget_password',[MainController::class, 'forget_password']);
         Route::post('/change_password', [MainController::class, 'change_password']);
+        Route::get('/check_code', [MainController::class, 'check_code']);
+        Route::post('/checkcode', [MainController::class, 'checkcode']);
     });
 });
 
