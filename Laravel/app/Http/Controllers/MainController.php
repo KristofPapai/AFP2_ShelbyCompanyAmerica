@@ -77,7 +77,7 @@ class MainController extends Controller
             'password' => Hash::make($request->get('password')),
             'name' => $request->get('name')
         );
-        DB::insert('insert into users (neptun, password, name) values (?,?,?)', [$user['neptun'], $user['password'], $user['name']]);
+        DB::insert('insert into users (neptun, password, name, legitimacy) values (?,?,?,0)', [$user['neptun'], $user['password'], $user['name']]);
         $login = array(
             'neptun' => $user['neptun'],
             'password' => $request->get('password'),
