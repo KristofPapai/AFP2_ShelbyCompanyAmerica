@@ -52,3 +52,7 @@ A weboldalunkat elsősorban iskolások/egyetemisták fogják használni. Emellet
 
 ------------------------------
 
+## Forgatókönyv
+
+Tanuló szemszögéből: A bejelentkezési képernyő fogadja a tanulót. Ha nincs fiókja akkor be tud regisztrálni a regisztrációs hiperlink megnyomásával. Ha van fiókja akkor csak egyszerűen beírja a Neptunkódját és a jelszavát. Ha esetleg elfelejtette a jelszavát kérhet helyreállítást a jelszó helyreállító hiperlink segítségével. 
+
