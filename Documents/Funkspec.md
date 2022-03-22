@@ -43,12 +43,12 @@ A weboldalunkat elsősorban iskolások/egyetemisták fogják használni. Emellet
 - Bejelentkezés
 
 
-![Bejelentkezés](https://imgur.com/kyo8TOL)
+![Bejelentkezés](https://imgur.com/kyo8TOL.png)
 
 - Regisztráció
 
 
-![Bejelentkezés](https://imgur.com/750iHEJ)
+![Bejelentkezés](https://i.imgur.com/750iHEJ.png)
 
 ------------------------------
 
