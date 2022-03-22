@@ -38,4 +38,17 @@ Egy igényes letisztult felületet szeretnénk. Login és Regisztrációs felül
 A weboldalunkat elsősorban iskolások/egyetemisták fogják használni. Emellet a kutatók és tanároknak is biztosítva lesz felület tananyagok, kutatások megosztásához.  
 
 ------------------------------
+## Képernyő tervek
+
+- Bejelentkezés
+
+
+![Bejelentkezés](https://imgur.com/kyo8TOL)
+
+- Regisztráció
+
+
+![Bejelentkezés](https://imgur.com/750iHEJ)
+
+------------------------------
 
