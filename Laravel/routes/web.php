@@ -29,6 +29,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::group(['middleware' => [GuestMiddleware::class]], function() {
         Route::get('/login', [MainController::class, 'login']);
+        Route::get('/register', [MainController::class,'register']);
         Route::post('/checklogin', [MainController::class, 'checklogin']);
         Route::get('/sendemail', [MainController::class, 'sendemail']);
         Route::post('/send_email', [MainController::class, 'send_email']);
@@ -36,6 +37,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/change_password', [MainController::class, 'change_password']);
         Route::get('/check_code', [MainController::class, 'check_code']);
         Route::post('/checkcode', [MainController::class, 'checkcode']);
+        Route::post('/checkregister', [MainController::class, 'checkregister']);
     });
 });
 

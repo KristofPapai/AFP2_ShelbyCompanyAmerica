@@ -22,3 +22,37 @@ Megrendelőnk egy multifunkciós E-learning rendszert igényelt melyben Különb
 | Main Page(POST-LOGIN) | MPO1  | Main MainPage | A Main Pagen lesz elérhető a funkciók zöme egy egyszerű letisztult menürendszerben. |
 | Main Page(POST-LOGIN-USER)  | MPOU1  | Kurzusaid listázása | Szükséges egy menüpont ahol az aktív kurzusait a felhasználónak ki kell listázni |
 | Main Page(POST-LOGIN-USER)  | MPOU2  | Oktatói profilra Váltás | Szükséges egy menüpont ahol ha aktyv oktatói profiunk van át tudunk váltani rá. |
+
+------------------------------
+## Jelenlegi üzleti folyamatok modellje
+A Mylearning egy non-profit szervezet által lett fejlesztve. Az oldal rendelkezni fog Donate funkciókkal de ez a szerver fedezetére fog elmenni. Célunk hogy a diákok részére egy könnyen kezelhető, egyszerű rendszert biztosítsunk.
+
+------------------------------
+
+## Igényelt üzleti folyamatok
+Egy igényes letisztult felületet szeretnénk. Login és Regisztrációs felületeket is áljanak rendelkezésre. emellet szükséges egy Főoldal ahol elérhető az összes menürendszer mely fontos a felhasználó számára.
+
+------------------------------
+
+## Használati esetek
+A weboldalunkat elsősorban iskolások/egyetemisták fogják használni. Emellet a kutatók és tanároknak is biztosítva lesz felület tananyagok, kutatások megosztásához.  
+
+------------------------------
+## Képernyő tervek
+
+- Bejelentkezés
+
+
+![Bejelentkezés](https://imgur.com/kyo8TOL.png)
+
+- Regisztráció
+
+
+![Bejelentkezés](https://i.imgur.com/750iHEJ.png)
+
+------------------------------
+
+## Forgatókönyv
+
+Tanuló szemszögéből: A bejelentkezési képernyő fogadja a tanulót. Ha nincs fiókja akkor be tud regisztrálni a regisztrációs hiperlink megnyomásával. Ha van fiókja akkor csak egyszerűen beírja a Neptunkódját és a jelszavát. Ha esetleg elfelejtette a jelszavát kérhet helyreállítást a jelszó helyreállító hiperlink segítségével. 
+
