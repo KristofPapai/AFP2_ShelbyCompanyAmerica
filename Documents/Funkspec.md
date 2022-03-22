@@ -24,6 +24,14 @@ Megrendelőnk egy multifunkciós E-learning rendszert igényelt melyben Különb
 | Main Page(POST-LOGIN-USER)  | MPOU2  | Oktatói profilra Váltás | Szükséges egy menüpont ahol ha aktyv oktatói profiunk van át tudunk váltani rá. |
 
 ------------------------------
- ## Jelenlegi üzleti folyamatok modellje
-
+## Jelenlegi üzleti folyamatok modellje
 A Mylearning egy non-profit szervezet által lett fejlesztve. Az oldal rendelkezni fog Donate funkciókkal de ez a szerver fedezetére fog elmenni. Célunk hogy a diákok részére egy könnyen kezelhető, egyszerű rendszert biztosítsunk.
+
+------------------------------
+
+## Igényelt üzleti folyamatok
+Egy igényes letisztult felületet szeretnénk. Login és Regisztrációs felületeket is áljanak rendelkezésre. emellet szükséges egy Főoldal ahol elérhető az összes menürendszer mely fontos a felhasználó számára.
+
+------------------------------
+
+
