@@ -11,7 +11,7 @@ class ForgetPasswordController extends Controller
 {
 
     public function __construct(){
-        $this->userCode =$this->generatecode();
+        $this->userCode = '';
     }
     public function check_code(){
         return view('check_code');
@@ -27,18 +27,21 @@ class ForgetPasswordController extends Controller
     public function GetUserCode() {
         $this->userCode;
     }
+    public function SetUserCode(){
+        $this->userCode = $this->generatecode();
+    }
 
-    //TODO: Email küldés
+    //TODO: Email küldés javítása
     function send_email(Request $request){
         $code = array(
-            'code'=>$this->GetUserCode(),
+            'code' => $this->generatecode(),
             'email'=>$request['email']);
-        Mail::raw("something", function ($message) use ($code){
+        DB::update('update users set code = ? where neptun = ?',[$code['code'], $request['neptun']]);
+        Mail::raw('Youre code to the new password: '.$code['code'], function ($message) use ($code){
             $message -> from($code['email'], 'Laravel');
             $message -> to($code['email']) -> subject('Forget Password');
         });
-        redirect('check_code');
-
+        return redirect('check_code');
     }
 
     function generatecode()
@@ -55,8 +58,8 @@ class ForgetPasswordController extends Controller
         $this->validate($request, [
             'code'=>['required']
         ]);
-        if ($request['code'] != $this->GetUserCode()){
-            dd($this->userCode);
+        $user = DB::table('users')->where('neptun',$request['neptun'])->pluck('code');
+        if ($request['code'] != $user[0]){
             return  back()->with('error', 'Not matching code');
         }
         return redirect('/forget_password');
