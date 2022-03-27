@@ -30,3 +30,19 @@ Mivel a mai világban igen gyorsan fejlődik minden ezért egyre nehezebb a tan�
 6. Eredmények rögzítése
 
 ------------------------------
+## Igényelt üzleti folyamatok
+1. Bejelentkezés alapú hitelesítés:
+- Azonosító kód (Neptun-kód)
+- Jelszó
+2. A felhasználóhoz tartozó kurzusok megjelenítése
+3. A kurzusba tanár szemszögéből:
+- Fel lehet tölteni tananyagot
+- Tesztek/Vizsgák létrehozása
+- Teszt/Vizsga eredmények megtekintése
+- Érdemjegyek beírása
+4. Diák szemszögéből:
+- Tananyagokhoz hozzáférés
+- Tesztek/Vizsgák kitöltése
+- Erdemjegyek megtekintése
+
+------------------------------
