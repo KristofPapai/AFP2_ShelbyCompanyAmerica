@@ -16,3 +16,17 @@ Megfelelő E-Learning rendszer hiányában cégünk ezt a területete szeretné 
 Mivel a mai világban igen gyorsan fejlődik minden ezért egyre nehezebb a tanárok leadni a tananyagot úgy, hogy a diák azt le is tudja rendesen jegyzetelni. Ennek következményeképpen született meg a Mylearning rendszer. Könnyedén lehet tananyagokat/kúrzusokat és akár tiszteket/vizsgákat létrehozni. Mindezzel papírt és pénzt spórolva.
 
 ------------------------------
+## Jelenlegi üzleti folyamatok
+1. Alap kellékek beszerzése:
+- Füzetek beszerzés
+- Könyvek beszerzése
+2. Tananyagok leadása/rögzítése
+- Tananyagok nyomtatása
+3. Tananyagok szétosztása
+4. Tesztek megtervezése
+- Tesztek nyomtatás
+5. Vizsgák/Tesztek lebonyolítása
+- Vizsgák/Tesztek nyomtatás
+6. Eredmények rögzítése
+
+------------------------------
