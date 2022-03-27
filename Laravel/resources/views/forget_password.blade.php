@@ -49,10 +49,8 @@
         </form>
     </section>
 </main>
-<!--
     <div class="max-w-lg mx-auto text-center mt-12 mb-6">
-        <p class="text-white">Nincs még fiókja? <a href="#" class="font-bold hover:underline">Regisztráció</a>.</p>
+        <p class="text-white">Nincs még fiókja? <a href="{{asset('register')}}" class="font-bold hover:underline">Regisztráció</a>.</p>
     </div>
-//-->
 </body>
 </html>
