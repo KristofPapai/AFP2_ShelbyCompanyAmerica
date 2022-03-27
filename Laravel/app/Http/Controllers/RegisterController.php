@@ -15,7 +15,8 @@ class RegisterController extends Controller
         $this->validate($request, [
             'name' => ['required'],
             'password' => ['required'],
-            'password_again' => ['required']
+            'password_again' => ['required'],
+            'email' => ['required']
         ]);
         if ($request['password']!=$request['password_again'])
         {
@@ -24,9 +25,10 @@ class RegisterController extends Controller
         $user = array(
             'neptun' => $this->generateNeptun(),
             'password' => Hash::make($request->get('password')),
-            'name' => $request->get('name')
+            'name' => $request->get('name'),
+            'email'=>$request->get('email')
         );
-        DB::insert('insert into users (neptun, password, name, legitimacy) values (?,?,?,0)', [$user['neptun'], $user['password'], $user['name']]);
+        DB::insert('insert into users (neptun, password, name, legitimacy, email) values (?,?,?,0,?)', [$user['neptun'], $user['password'], $user['name'], $user['email']]);
         $login = array(
             'neptun' => $user['neptun'],
             'password' => $request->get('password'),
