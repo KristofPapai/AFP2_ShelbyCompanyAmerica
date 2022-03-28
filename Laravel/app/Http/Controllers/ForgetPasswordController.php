@@ -34,12 +34,13 @@ class ForgetPasswordController extends Controller
     //TODO: Email küldés javítása
     function send_email(Request $request){
         $code = array(
-            'code' => $this->generatecode(),
-            'email'=>$request['email']);
+            'code' => $this->generatecode());
+        $email = $request['email'];
         DB::update('update users set code = ? where neptun = ?',[$code['code'], $request['neptun']]);
-        Mail::raw('Youre code to the new password: '.$code['code'], function ($message) use ($code){
-            $message -> from($code['email'], 'Laravel');
-            $message -> to($code['email']) -> subject('Forget Password');
+        Mail::send('send_to_email', $code, function($message) use ($email) {
+            $message->to($email, 'Sehelby America')->subject
+            ('Jelszó változtatás');
+            $message->from('shelby.america.12@gmail.com','Shelby America');
         });
         return redirect('check_code');
     }
