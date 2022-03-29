@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('name');
             $table->string('code', 15);
+            $table->string('email',100);
             $table->tinyInteger('legitimacy');
             $table->rememberToken();
 
