@@ -39,16 +39,19 @@ class MainController extends Controller
     }
     function useroptionscheck(Request $request){
         //TODO: Adatbázisban megváltoztatni az értékeket
-        if($request->filled('new_password' )&&$request->filled('new_auth')) {
-
+        switch (true) {
+            case $request->filled('new_password'):
+                dd('valami');
+                break;
+            case $request->filled('new_auth'):
+                dd('valami2');
+                break;
+            case $request->filled('new_password') && $request->filled('new_auth'):
+                dd('valami3');
+                break;
+            default:
+                break;
         }
-        else if($request->filled('new_auth')){
-
-        }
-        else if($request->filled('new_password')){
-
-        }
-        return view('user_options');
 
     }
     function checklogin(Request $request)
@@ -116,6 +119,7 @@ class MainController extends Controller
         );
         DB::update('update users set password = ? where neptun = ?',[$user['password'],$user['neptun']]);
         return redirect('/login');
+    }
     function checkregister(Request $request){
         $this->validate($request, [
             'name' => ['required'],
@@ -145,6 +149,7 @@ class MainController extends Controller
         {
             return back()->with('error','Wrong Registration Details');
         }
+
     }
     function generateNeptun()
     {
@@ -181,5 +186,5 @@ class MainController extends Controller
         return redirect('/login');
     }
 
-}
+
 }
