@@ -15,7 +15,7 @@
             }
         </style>
     </head>
-    <body>
+    <body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
     <header class="max-w-lg mx-auto">
         <a href="#">
             <h1 class="text-4xl font-bold text-white text-center">MyLearning</h1>
@@ -42,6 +42,10 @@
                 <div class="mb-6 pt-3 rounded bg-gray-200">
                     <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="password_again">Jelszó újra</label>
                     <input type="password" id="password_again" name="password_again" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" required value="">
+                </div>
+                <div class="mb-6 pt-3 rounded bg-gray-200">
+                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" required value="">
                 </div>
                 <br/>
                 <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit" name="registration">Regisztáció</button>
