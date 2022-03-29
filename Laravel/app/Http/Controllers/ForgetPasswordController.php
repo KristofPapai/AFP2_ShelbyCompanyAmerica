@@ -37,7 +37,7 @@ class ForgetPasswordController extends Controller
             'code' => $this->generatecode());
         $email = $request['email'];
         DB::update('update users set code = ? where neptun = ?',[$code['code'], $request['neptun']]);
-        Mail::send('send_to_email', $code, function($message) use ($email) {
+        Mail::send('code', $code, function($message) use ($email) {
             $message->to($email, 'Sehelby America')->subject
             ('Jelszó változtatás');
             $message->from('shelby.america.12@gmail.com','Shelby America');
