@@ -36,7 +36,7 @@
         <a href="#" class="text-2xl hover:text-purple-700 duration-500 font-bold">KURZUSOK</a>
       </li>
       <li class="mx-4 my-6 md:my-0">
-        <select onchange="window.location.href=this.value;" class="text-2xl hover:text-purple-700 duration-500 font-bold">
+        <select onchange="window.location.href=this.value;" class="text-2xl hover:text-purple-700 duration-500 font-bold w-52">
             <option hidden value="" disabled selected >BEÁLLÍTÁSOK</option>
             <optgroup label="Alap beállítások">
                 <option value="{{route('options')}}">Beállítások</option>
@@ -47,13 +47,16 @@
                 <option value="{{asset('useroptions')}}">Beállítások</option>
             </optgroup>
         </select>
-        <a href="{{asset('logout')}}">Kijelentkezés</a>
-
+      </li>
+      <li>
+        <a href="{{asset('logout')}}" class="text-2xl hover:text-purple-700 duration-500 font-bold w-52">KIJELENTKEZÉS</a>
       </li>
       
 <h2 class=""></h2>
     </ul>
   </nav>
+
+  
 
 
   <script>
