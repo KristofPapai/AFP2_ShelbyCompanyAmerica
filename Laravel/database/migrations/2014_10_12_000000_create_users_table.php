@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('neptun');
             $table->string('password');
             $table->string('name');
+            $table->string('code', 15);
             $table->tinyInteger('legitimacy');
             $table->rememberToken();
 
