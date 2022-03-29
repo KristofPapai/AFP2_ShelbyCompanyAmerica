@@ -10,13 +10,30 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>E-Learning</title>
     <style>
-        .body-bg {
-            background-color: #9921e8;
-            background-image: linear-gradient(315deg, #9921e8 0%, #5f72be 74%);
+        body {
+            font-family: "Inter", sans-serif;
         }
-    </style>
+
+        .background-animate {
+            background-size: 400%;
+
+            -webkit-animation: AnimationName 10s ease infinite;
+            -moz-animation: AnimationName 10s ease infinite;
+            animation: AnimationName 10s ease infinite;
+        }
+
+        @keyframes AnimationName {
+            0%,
+            100% {
+            background-position: 0% 50%;
+            }
+            50% {
+            background-position: 100% 50%;
+            }
+        }
+    </style>  
 </head>
-<body class="body-bg min-h-screen  pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
+<body class="body-bg min-h-screen  pb-6 px-2 md:px-0 bg-gradient-to-r from-cyan-300 via-teal-500 to-lime-400 background-animate" style="font-family:'Lato',sans-serif;">
 <?php
     $auth = Auth::user()->auth;
 ?>
@@ -33,11 +50,11 @@
 
     <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
       <li class="mx-4 my-6 md:my-0">
-        <a href="#" class="text-2xl hover:text-purple-700 duration-500 font-bold">KURZUSOK</a>
+        <a href="#" class="text-2xl hover:text-lime-700 duration-500 font-bold">Kurzusok</a>
       </li>
       <li class="mx-4 my-6 md:my-0">
-        <select onchange="window.location.href=this.value;" class="text-2xl hover:text-purple-700 duration-500 font-bold w-52">
-            <option hidden value="" disabled selected >BEÁLLÍTÁSOK</option>
+        <select onchange="window.location.href=this.value;" class="text-2xl hover:text-lime-700 duration-500 font-bold w-52">
+            <option hidden value="" disabled selected >Beállítások</option>
             <optgroup label="Alap beállítások">
                 <option value="{{route('options')}}">Beállítások</option>
             </optgroup>
@@ -49,7 +66,7 @@
         </select>
       </li>
       <li>
-        <a href="{{asset('logout')}}" class="text-2xl hover:text-purple-700 duration-500 font-bold w-52">KIJELENTKEZÉS</a>
+        <a href="{{asset('logout')}}" class="text-2xl hover:text-lime-700 duration-500 font-bold w-52">Kijelentkezés</a>
       </li>
       
 <h2 class=""></h2>
