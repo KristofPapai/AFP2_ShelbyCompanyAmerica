@@ -31,7 +31,6 @@ class ForgetPasswordController extends Controller
         $this->userCode = $this->generatecode();
     }
 
-    //TODO: Email küldés javítása
     function send_email(Request $request){
         $code = array(
             'code' => $this->generatecode());

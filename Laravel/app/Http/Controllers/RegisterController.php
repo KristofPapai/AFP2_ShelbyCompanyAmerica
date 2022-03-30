@@ -5,9 +5,15 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
+    public function __construct(){
+        $this->neptun = '';
+    }
+    private string $neptun;
+
     public function register(){
         return view('register');
     }
@@ -29,11 +35,13 @@ class RegisterController extends Controller
             'email'=>$request->get('email')
         );
         DB::insert('insert into users (neptun, password, name, legitimacy, email, code) values (?,?,?,0,?,0)', [$user['neptun'], $user['password'], $user['name'], $user['email']]);
+
         $login = array(
             'neptun' => $user['neptun'],
             'password' => $request->get('password'),
             'name' => $request->get('name')
         );
+        $this->send_neptun($user['neptun'],$user['email']);
         if (Auth::attempt($login))
         {
             return redirect('/main');
@@ -57,5 +65,13 @@ class RegisterController extends Controller
         }
         $neptun = implode($neptun_array);
         return $neptun;
+    }
+    function send_neptun($neptun, $email){
+        $send = array('neptun' => $neptun);
+        Mail::send('send_neptun', $send, function($message) use ($email) {
+            $message->to($email, 'Sehelby America')->subject
+            ('Registráció');
+            $message->from('shelby.america.12@gmail.com','Shelby America');
+        });
     }
 }
