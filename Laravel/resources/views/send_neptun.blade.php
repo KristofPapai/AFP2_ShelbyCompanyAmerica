@@ -27,8 +27,8 @@
 
 <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
     <section>
-        <h3 class="font-bold text-2xl">Elfelejtett jelszó</h3>
-        <p>Kérjük adja meg az e-mail címét és a neptun kódját az ellenőrző kód küldéshez</p>
+        <h3 class="font-bold text-2xl">Neptun kód</h3>
+        <p>Itt küldjük neptun kódját amivel be tud jelentkezni</p>
     </section>
 
     <section class="mt-10">
