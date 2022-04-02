@@ -23,3 +23,5 @@ Frontend:
 ## Adatbázis terv
 ![Adatbázis](https://i.imgur.com/loOV19k.png)
 --------------------------
+## Telepítési terv
+A weboldal használatához szüksége lesz a felhasználónak egy böngésző (Opera, Microsoft Edge, Google Chrome, Mozilla Firefox).
