@@ -20,3 +20,6 @@ Backend:
 Frontend:
  - TailWind CSS
 --------------------------
+## Adatbázis terv
+![Adatbázis](https://i.imgur.com/loOV19k.png)
+--------------------------
