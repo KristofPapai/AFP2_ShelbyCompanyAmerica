@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->string('neptun',6)->primary();
-            $table->string('password',150);
-            $table->string('name',40);
-            $table->string('code', 15);
-            $table->string('email',100);
-            $table->tinyInteger('legitimacy');
-            $table->rememberToken();
+        Schema::create('timetable', function (Blueprint $table) {
+            $table->integer('id')->primary();
+            $table->string('course_id',4);
+            $table->string('student_id',6);
+            $table->foreign('course_id')->references('course_id')->on('course');
+            $table->foreign('student_id')->references('neptun')->on('users');
         });
     }
 
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('timetable');
     }
 };
