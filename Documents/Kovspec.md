@@ -46,3 +46,10 @@ Mivel a mai világban igen gyorsan fejlődik minden ezért egyre nehezebb a tan�
 - Erdemjegyek megtekintése
 
 ------------------------------
+## A rendszerre vonatkozó szabályok
+- A web felület keretrendszerrel készüljön el.
+- Laravel framework - html/php/css
+- A felület legyen letisztult, könnyen használható
+- A használathoz szükséges autentikáció.
+
+------------------------------
