@@ -10,3 +10,13 @@
     - Paint
     - XAMPP(phpmyadmin)
 --------------------------
+## Architektúrális terv
+Backend:
+ - A fejlesztéshez szükséges egy adatbázis szerver amit MySQL-lel valósítunk meg
+ - Laravel framework a szabványos fájlkezelés és összetettebb fejlesztési lehetőségek végett
+ - PHP
+ - JavaScript
+ 
+Frontend:
+ - TailWind CSS
+--------------------------
