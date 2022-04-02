@@ -9,7 +9,7 @@
   - Bencsik Krisztián Dániel
 ------------------------------
 ## Jelenlegi helyzet
-Megfelelő E-Learning rendszer hiányában cégünk ezt a területete szeretné kiaknázni. Egy interaktyv modern megjelenésű konnyne használható rendszert szeretnékn biztosítani Egyetemistáknak és iskolásoknak.
+Megfelelő E-Learning rendszer hiányában cégünk ezt a területete szeretné kiaknázni. Egy interaktív modern megjelenésű konnyne használható rendszert szeretnékn biztosítani Egyetemistáknak és iskolásoknak.
 
 ------------------------------
 ## Vágyálomrendszer 
@@ -63,3 +63,7 @@ Mivel a mai világban igen gyorsan fejlődik minden ezért egyre nehezebb a tan�
 - Felhasználók szerkeszthetősége
     
 ------------------------------
+## 7. Fogalomtár
+-  E-learning - Weboldalon létrehozott digitális tananyagok tárhelye
+-  Laravel - Egy ingyenes, nyílt forráskódú PHP web framework, melynek célja, hogy MVC modellre illeszkedően leegyszerűsítse a webalkalmazások fejlesztését.
+-  Framework - bizonyos tipikus feladatok elvégzését nagy mértékben segítő, egységes módon megszerkesztett komponenseket tartalmazó halmaz.
