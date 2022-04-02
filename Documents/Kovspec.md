@@ -53,3 +53,13 @@ Mivel a mai világban igen gyorsan fejlődik minden ezért egyre nehezebb a tan�
 - A használathoz szükséges autentikáció.
 
 ------------------------------
+## 6. Követelménylista
+- Könnyen átlátható, felhasználóbarát felület
+- Neptun kód generálás
+- Kurzusok listázása
+- Kurzusok létrehozása
+- Kurzusokhoz való hozzárendelés
+- Kurzusok szerkesztése
+- Felhasználók szerkeszthetősége
+    
+------------------------------
