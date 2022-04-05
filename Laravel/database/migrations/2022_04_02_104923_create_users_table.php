@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('code', 15);
             $table->string('email',100);
             $table->tinyInteger('legitimacy');
-            $table->integer('group');
+            $table->integer('group_id');
             $table->rememberToken();
-            $table->foreign('group')->references('group_id')->on('group');
+            $table->foreign('group_id')->references('group_id')->on('student_group');
         });
     }
 
