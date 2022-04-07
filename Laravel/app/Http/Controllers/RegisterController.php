@@ -40,7 +40,7 @@ class RegisterController extends Controller
             'name' => $request->get('name'),
             'email'=>$request->get('email')
         );
-        $user = DB::insert('insert into users (neptun, password, name, legitimacy, email, code, group_id) values (?,?,?,0,?,0,1)', [$user['neptun'], $user['password'], $user['name'], $user['email']]);
+        DB::insert('insert into users (neptun, password, name, legitimacy, email, code, group_id) values (?,?,?,0,?,0,1)', [$user['neptun'], $user['password'], $user['name'], $user['email']]);
 
         
         $this->send_neptun($login['neptun'],$login['email']);
