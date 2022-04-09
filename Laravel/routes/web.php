@@ -27,6 +27,8 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/useroptions', [MainController::class, 'useroptions'])->name('useroptions');
         Route::get('/courseoptions', [MainController::class, 'courseoptions'])->name('courseoptions');
         Route::post('/useroptionscheck', [MainController::class, 'useroptionscheck']);
+        Route::post('/checkcoursesingle', [MainController::class, 'checkcoursesingle']);
+        Route::post('/checkcoursemultiple', [MainController::class, 'checkcoursemultiple']);
     });
 
     Route::group(['middleware' => [GuestMiddleware::class]], function() {
