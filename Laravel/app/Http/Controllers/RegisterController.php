@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Auth;
+
+use App\Models\user;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
@@ -34,14 +35,23 @@ class RegisterController extends Controller
             'name' => $request->get('name'),
             'email'=>$request->get('email')
         );
-        DB::insert('insert into users (neptun, password, name, legitimacy, email, code) values (?,?,?,0,?,0)', [$user['neptun'], $user['password'], $user['name'], $user['email']]);
-
         $login = array(
             'neptun' => $user['neptun'],
             'password' => $request->get('password'),
-            'name' => $request->get('name')
+            'name' => $request->get('name'),
+            'email'=>$request->get('email')
         );
-        $this->send_neptun($user['neptun'],$user['email']);
+        $newUser = new User;
+        $newUser->neptun = $user['neptun'];
+        $newUser->password = $user['password'];
+        $newUser->name = $user['name'];
+        $newUser->legitimacy = 0;
+        $newUser->email = $user['email'];
+        $newUser->code = 0;
+        $newUser->group_id = 1;
+        $newUser->save();
+        
+        $this->send_neptun($login['neptun'],$login['email']);
         if (Auth::attempt($login))
         {
             return redirect('/main');

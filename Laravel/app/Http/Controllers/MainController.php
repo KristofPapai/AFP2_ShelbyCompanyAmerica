@@ -2,8 +2,9 @@
 namespace  App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
-use Auth;
-use Session;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Vtiful\Kernel\Excel;
 
 class MainController extends Controller
 {

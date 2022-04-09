@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -13,10 +14,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('group', function (Blueprint $table) {
+        Schema::create('student_group', function (Blueprint $table) {
             $table->integer('group_id')->primary();
-            $table->string('group_name', 30);
+            $table->string('group_name', 150);
         });
+        DB::table('student_group')->insert([
+            'group_id'=>'1',
+            'group_name'=>'új felhasználó'
+        ]);
+        DB::table('student_group')->insert([
+            'group_id'=>'2',
+            'group_name'=>'Tanár'
+        ]);
     }
 
     /**
@@ -26,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('group');
+        Schema::dropIfExists('student_group');
     }
 };
