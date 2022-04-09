@@ -1,7 +1,6 @@
 <?php
 namespace  App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Http\UploadedFile;
 use Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -70,16 +69,9 @@ class MainController extends Controller
 
     //TODO: insert into diák kurzus
     function checkcoursesingle(Request $request) {
-
-        //dd($request->file('courseMultNeptun'));
-
         $uploadedFile = $request->file('courseMultNeptun');
-        while (($data = fgetcsv($uploadedFile)) !== FALSE) {
-            var_dump($data);
-        }
-        //$data = array_map('fgetcsv', file($uploadedFile));
-
-        //dd($data);
+        $data = array_map('str_getcsv', file($uploadedFile));
+        dd($data);
     }
 
     function successlogin()
