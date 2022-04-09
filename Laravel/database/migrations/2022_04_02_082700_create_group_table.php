@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->string('neptun',6)->primary();
-            $table->string('password',150);
-            $table->string('name',40);
-            $table->string('code', 15);
-            $table->string('email',100);
-            $table->tinyInteger('legitimacy');
-            $table->rememberToken();
+        Schema::create('group', function (Blueprint $table) {
+            $table->integer('group_id')->primary();
+            $table->string('group_name', 30);
         });
     }
 
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('group');
     }
 };
