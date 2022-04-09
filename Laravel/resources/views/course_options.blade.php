@@ -38,9 +38,9 @@
 
 <div>
 
-    <form method="post" action='/checkcourse'>
+    <form enctype="multipart/form-data" method="post" action='/checkcoursesingle'>
         @csrf
-        Neptun-kódok (.csv)<input id="courseMultNeptun" disabled type="file" accept=".csv" />
+        Neptun-kódok (.csv)<input name="courseMultNeptun" id="courseMultNeptun" disabled type="file" accept=".csv" />
         Kurzus
         <!--TODO: dinamikus kurzus dropdown a tanár szempontjából-->
         <select disabled id="courseMultCourse">
@@ -50,6 +50,8 @@
         <input id="Mult" name="courseMult" onclick="enableMultUpl()" type="checkbox"><br></br>
         Neptun-Kód <input disabled id="courseSinglNeptun" type="text" name="neptun" required value="">
         Kurzus
+    </form>
+    <form method="post" action='/checkcoursemultiple'>
         <!--TODO: dinamikus kurzus dropdown a tanár szempontjából-->
         <select disabled id="courseSinglCourse">
             <option value="Kurzus">Valami</option>
