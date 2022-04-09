@@ -80,7 +80,7 @@ class RegisterController extends Controller
         $send = array('neptun' => $neptun);
         Mail::send('send_neptun', $send, function($message) use ($email) {
             $message->to($email, 'Sehelby America')->subject
-            ('Registráció');
+            ('Regisztráció');
             $message->from('shelby.america.12@gmail.com','Shelby America');
         });
     }

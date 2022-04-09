@@ -15,3 +15,24 @@ Hozzuk létre az adatbázist:
 ```
 create database elearning;
 ```
+# 2. Lépés: Laravel framework telepítése
+- Telepítenünk kell a Composer programot [Letöltés](https://getcomposer.org/Composer-Setup.exe)
+- Készítsünk egy mappát! Ide kell mindig navigálnunk, akárhányszor el szeretnénk indítani a weboldalt!
+- Illesszük be ide a letöltött állományt!
+- Indítsuk el a Windows PowerShellt. Navigáljunk el az előbb létrehozott mappába.
+- Írjuk be az alábbi parancsot:
+```
+php artisan key:generate
+```
+
+Ezután nyissuk meg a ```.env``` nevű fájlt. Az itt felsorolt adatokat állítsuk be az általunk készített adatbázis adataira!
+Most a PowerShellbe írjuk be:
+```
+php artisan migrate:fresh
+```
+Ezután pedig indítsuk el a szervert!
+```
+php artisan serve
+```
+
+## A PowerShellben megjelenő linkkel azonnal elérhető és használható a weboldal!
