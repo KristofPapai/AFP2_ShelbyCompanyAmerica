@@ -44,5 +44,14 @@ Frontend:
 A fejlesztési fázis után a szolgáltatás feltöltése egy webservice-be hogy bárki számára elérhető legyen. Emellet saját domain igénylése a www.mylearning.com-ra
 
 --------------------------
+## Tesztterv
+Tesztelés:
+ - Login funkciók tesztelése
+ - regisztráció tesztelése
+ - kurzus hozzáadás tesztelése
+ - kurzus regisztrálás tesztelése
+ - kurzus hozzárendelés tesztelése
+
+--------------------------
 ## Telepítési terv
 A weboldal használatához szüksége lesz a felhasználónak egy böngésző (Opera, Microsoft Edge, Google Chrome, Mozilla Firefox).
