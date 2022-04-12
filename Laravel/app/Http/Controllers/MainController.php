@@ -1,5 +1,6 @@
 <?php
 namespace  App\Http\Controllers;
+use App\Models\Timetable;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\Auth;
@@ -71,7 +72,13 @@ class MainController extends Controller
     function checkcoursesingle(Request $request) {
         $uploadedFile = $request->file('courseMultNeptun');
         $data = array_map('str_getcsv', file($uploadedFile));
-        dd($data);
+        for ($i = 0; $i<count($data); $i++){
+            $tTable = new Timetable();
+            $tTable -> course_id = 'Vala';
+            $tTable -> student_id = $data[$i][0];
+            $tTable -> save();
+        }
+        dd($i);
     }
 
     function successlogin()
