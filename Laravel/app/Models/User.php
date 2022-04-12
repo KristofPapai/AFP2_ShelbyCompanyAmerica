@@ -23,7 +23,10 @@ class user extends Authenticatable
         'neptun',
         'password',
         'name',
+        'code',
+        'email',
         'legitimacy',
+        'group_id',
     ];
 
     /**

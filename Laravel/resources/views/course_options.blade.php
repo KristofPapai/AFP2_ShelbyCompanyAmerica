@@ -96,32 +96,31 @@
     </nav> 
 
 
-    <main class="bg-white max-w-2xl mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
-        <div>
-            <form method="post" action='/checkcourse'>
-                @csrf
-                Neptun-kódok (.csv)<input id="courseMultNeptun" disabled type="file" accept=".csv" />
-                Kurzus
-                <!--TODO: dinamikus kurzus dropdown a tanár szempontjából-->
-                <select disabled id="courseMultCourse">
-                    <option value="Kurzus">Valami</option>
-                </select>
-                <input disabled id="courseMultSubmit" type="submit" name="submit" value="Hozzárendelés">
-                <input id="Mult" name="courseMult" onclick="enableMultUpl()" type="checkbox"><br></br>
-                Neptun-Kód <input disabled id="courseSinglNeptun" type="text" name="neptun" required value="">
-                Kurzus
-                <!--TODO: dinamikus kurzus dropdown a tanár szempontjából-->
-                <select disabled id="courseSinglCourse">
-                    <option value="Kurzus">Valami</option>
-                </select>
-                <input disabled id="courseSinglSubmit" type="submit" name="submit" value="Hozzárendelés">
-                <input id="Singl" name="courseSingl" onclick="enableSinglUpl()" type="checkbox">
-            </form>
-            <!--TODO: Ha lesz navbar ez elengedhető-->
-            <form method="get" action='/main'>
-                <input type="submit" name="submit" value="Vissza">
-            </form>
-        </div>
-    </main>
+    <form enctype="multipart/form-data" method="post" action='/checkcoursesingle'>
+        @csrf
+        Neptun-kódok (.csv)<input name="courseMultNeptun" id="courseMultNeptun" disabled type="file" accept=".csv" />
+        Kurzus
+        <!--TODO: dinamikus kurzus dropdown a tanár szempontjából-->
+        <select disabled id="courseMultCourse">
+            <option value="Kurzus">Valami</option>
+        </select>
+        <input disabled id="courseMultSubmit" type="submit" name="submit" value="Hozzárendelés">
+        <input id="Mult" name="courseMult" onclick="enableMultUpl()" type="checkbox"><br></br>
+        Neptun-Kód <input disabled id="courseSinglNeptun" type="text" name="neptun" required value="">
+        Kurzus
+    </form>
+    <form method="post" action='/checkcoursemultiple'>
+        <!--TODO: dinamikus kurzus dropdown a tanár szempontjából-->
+        <select disabled id="courseSinglCourse">
+            <option value="Kurzus">Valami</option>
+        </select>
+        <input disabled id="courseSinglSubmit" type="submit" name="submit" value="Hozzárendelés">
+        <input id="Singl" name="courseSingl" onclick="enableSinglUpl()" type="checkbox">
+    </form>
+    <!--TODO: Ha lesz navbar ez elengedhető-->
+    <form method="get" action='/main'>
+        <input type="submit" name="submit" value="Vissza">
+    </form>
+</div>
 </body>
 </html>

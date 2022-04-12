@@ -2,8 +2,9 @@
 namespace  App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
-use Auth;
-use Session;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Vtiful\Kernel\Excel;
 
 class MainController extends Controller
 {
@@ -67,8 +68,10 @@ class MainController extends Controller
     }
 
     //TODO: insert into diák kurzus
-    function checkcourse(Request $request) {
-
+    function checkcoursesingle(Request $request) {
+        $uploadedFile = $request->file('courseMultNeptun');
+        $data = array_map('str_getcsv', file($uploadedFile));
+        dd($data);
     }
 
     function successlogin()
