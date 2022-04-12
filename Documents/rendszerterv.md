@@ -1,3 +1,5 @@
+## Rendszer célja
+A Mylearning célja egy egyszerű de nagyon interaktív elearning rendszer elkészítése. Célunk minden korosztály számára elérhető és versenyképes tudás szolgáltatása a MyLearning rendszeren keresztül.
 
 --------------------------
 ## Fizikai környezet
