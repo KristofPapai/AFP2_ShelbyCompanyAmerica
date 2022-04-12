@@ -29,6 +29,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/useroptionscheck', [MainController::class, 'useroptionscheck']);
         Route::post('/checkcoursesingle', [MainController::class, 'checkcoursesingle']);
         Route::post('/checkcoursemultiple', [MainController::class, 'checkcoursemultiple']);
+        Route::post('/checkpassword', [MainController::class, 'checkpassword']);
     });
 
     Route::group(['middleware' => [GuestMiddleware::class]], function() {
