@@ -28,9 +28,41 @@ return new class extends Migration
             $table->rememberToken();
             $table->foreign('group_id')->references('group_id')->on('student_group');
         });
-        
+
         DB::table('users')->insert([
             'neptun'=>'AAA123',
+            'password'=> Hash::make('admin'),
+            'name'=>'Admin',
+            'code'=>'',
+            'email'=>'shelby.america.12@gmail.com',
+            'group_id'=>2
+        ]);
+        DB::table('users')->insert([
+            'neptun'=>'Y0DM28',
+            'password'=> Hash::make('admin'),
+            'name'=>'Admin',
+            'code'=>'',
+            'email'=>'shelby.america.12@gmail.com',
+            'group_id'=>2
+        ]);
+        DB::table('users')->insert([
+            'neptun'=>'BNTET0',
+            'password'=> Hash::make('admin'),
+            'name'=>'Admin',
+            'code'=>'',
+            'email'=>'shelby.america.12@gmail.com',
+            'group_id'=>2
+        ]);
+        DB::table('users')->insert([
+            'neptun'=>'WGXNP2',
+            'password'=> Hash::make('admin'),
+            'name'=>'Admin',
+            'code'=>'',
+            'email'=>'shelby.america.12@gmail.com',
+            'group_id'=>2
+        ]);
+        DB::table('users')->insert([
+            'neptun'=>'BWQ1BU',
             'password'=> Hash::make('admin'),
             'name'=>'Admin',
             'code'=>'',
