@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('timetable', function (Blueprint $table) {
-            $table->integer('id')->primary();
+        Schema::create('timetables', function (Blueprint $table) {
+            $table->integer('id')->autoIncrement();
             $table->string('course_id',4);
             $table->string('student_id',6);
+            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamp('created_at')->useCurrent();
             $table->foreign('course_id')->references('course_id')->on('course');
             $table->foreign('student_id')->references('neptun')->on('users');
         });
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('timetable');
+        Schema::dropIfExists('timetables');
     }
 };
