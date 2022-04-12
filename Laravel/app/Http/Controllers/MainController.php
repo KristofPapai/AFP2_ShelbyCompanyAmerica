@@ -1,9 +1,13 @@
 <?php
 namespace  App\Http\Controllers;
 use App\Models\Timetable;
+
+use App\Models\user;
 use Illuminate\Http\Request;
 use Validator;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Vtiful\Kernel\Excel;
 
@@ -63,9 +67,22 @@ class MainController extends Controller
         }
     }
 
-    //TODO: Az adatbázison végigmegy a neptun kódokért majd ha a jelszavaknál egyezést talál megváltoztatja az újra
+    
     function checkpassword (Request $request) {
-
+        $user = user::findorFail($request['neptun']);
+        $old_password = Hash::make($request['old_password']);
+        if($old_password == $user->password){
+            return back()->with('error', 'Password not matching');
+        }
+        user::where('neptun', $user->neptun)->update([
+            'password'=> Hash::make($request['new_password']),
+            'name'=>$request['name'],
+            'code'=>0,
+            'email'=>$user->email,
+            'legitimacy'=>$user->legitimacy,
+            'group_id'=>$user->group_id
+        ]);
+        return redirect('/main');
     }
 
     //TODO: insert into diák kurzus

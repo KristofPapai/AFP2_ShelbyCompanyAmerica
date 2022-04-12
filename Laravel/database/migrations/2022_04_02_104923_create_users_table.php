@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('neptun',6)->primary();
             $table->string('password',150);
             $table->string('name',40);
-            $table->string('code', 15);
+            $table->string('code', 15)->default('');
             $table->string('email',100);
             $table->tinyInteger('legitimacy')->default(0);
-            $table->integer('group_id');
+            $table->integer('group_id')->default(1);
             $table->timestamp('updated_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
             $table->rememberToken();

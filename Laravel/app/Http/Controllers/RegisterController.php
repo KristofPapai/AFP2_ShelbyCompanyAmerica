@@ -47,7 +47,6 @@ class RegisterController extends Controller
         $newUser->name = $user['name'];
         $newUser->legitimacy = 0;
         $newUser->email = $user['email'];
-        $newUser->code = 0;
         $newUser->group_id = 1;
         $newUser->save();
         
