@@ -53,5 +53,9 @@ Tesztelés:
  - kurzus hozzárendelés tesztelése
 
 --------------------------
+## Karbantartási terv
+Hibabejelentő funkció implementálása az oldalra igy rögtön értesülhetünk egy hiba esetén.
+
+--------------------------
 ## Telepítési terv
 A weboldal használatához szüksége lesz a felhasználónak egy böngésző (Opera, Microsoft Edge, Google Chrome, Mozilla Firefox).
