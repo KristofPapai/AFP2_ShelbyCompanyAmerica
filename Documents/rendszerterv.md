@@ -2,6 +2,13 @@
 A Mylearning célja egy egyszerű de nagyon interaktív elearning rendszer elkészítése. Célunk minden korosztály számára elérhető és versenyképes tudás szolgáltatása a MyLearning rendszeren keresztül.
 
 --------------------------
+## Projektterv
+Fejlesztési fázisok:
+ - Alap felhasználói funkciók elkészítése
+ - Kurzusok létrehozása és alapszintű kurzusműveletek.
+ - Kurzusokhoz anyagok feltöltése, feladatok, határidők létrehozása.
+
+--------------------------
 ## Fizikai környezet
  - Az alkalmazás WEB platformon készül.
     - A BootStrap alkalmazása miatt hordozható eszközökön (okostelefon, táblagépek) illetve asztali számítógépeken is egyformán elérhető.
