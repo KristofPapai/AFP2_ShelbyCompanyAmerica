@@ -38,6 +38,11 @@ Frontend:
 --------------------------
 ## Adatbázis terv
 ![Adatbázis](https://i.imgur.com/loOV19k.png)
+
+--------------------------
+## Implemetációs terv
+A fejlesztési fázis után a szolgáltatás feltöltése egy webservice-be hogy bárki számára elérhető legyen. Emellet saját domain igénylése a www.mylearning.com-ra
+
 --------------------------
 ## Telepítési terv
 A weboldal használatához szüksége lesz a felhasználónak egy böngésző (Opera, Microsoft Edge, Google Chrome, Mozilla Firefox).
