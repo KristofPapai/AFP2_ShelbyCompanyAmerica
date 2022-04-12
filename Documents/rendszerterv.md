@@ -9,6 +9,13 @@ Fejlesztési fázisok:
  - Kurzusokhoz anyagok feltöltése, feladatok, határidők létrehozása.
 
 --------------------------
+## Követelmények
+Követelmények:
+ - Modern megjelenés
+ - Könnyű átlátható funkciók
+ - Egyszerű kezelőfelületek
+
+--------------------------
 ## Fizikai környezet
  - Az alkalmazás WEB platformon készül.
     - A BootStrap alkalmazása miatt hordozható eszközökön (okostelefon, táblagépek) illetve asztali számítógépeken is egyformán elérhető.
