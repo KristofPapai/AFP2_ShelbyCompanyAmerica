@@ -67,7 +67,7 @@ class MainController extends Controller
         }
     }
 
-    
+
     function checkpassword (Request $request) {
         $user = user::findorFail($request['neptun']);
         $old_password = Hash::make($request['old_password']);
@@ -86,7 +86,7 @@ class MainController extends Controller
     }
 
     //TODO: insert into diák kurzus
-    function checkcoursesingle(Request $request) {
+    function checkcoursemultiple(Request $request) {
         $uploadedFile = $request->file('courseMultNeptun');
         $data = array_map('str_getcsv', file($uploadedFile));
         for ($i = 0; $i<count($data); $i++){
@@ -96,6 +96,12 @@ class MainController extends Controller
             $tTable -> save();
         }
         dd($i);
+    }
+    function checkcoursesingle(Request $request) {
+        $tTable = new Timetable();
+        $tTable -> course_id = 'Vala';
+        $tTable -> student_id = $request;
+        $tTable -> save();
     }
 
     function successlogin()
