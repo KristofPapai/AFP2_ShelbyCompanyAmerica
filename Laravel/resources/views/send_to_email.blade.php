@@ -36,7 +36,7 @@
 </head>
 <body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0 bg-gradient-to-r from-indigo-500 via-red-500 to-yellow-500 background-animate" style="font-family:'Lato',sans-serif;">
 <header class="max-w-lg mx-auto">
-    <a href="#">
+    <a href="{{ asset('login') }}">
         <h1 class="text-4xl font-bold text-white text-center">MyLearning</h1>
         <h1 class="text-2xl text-white text-center">Knowledge is power</h1>
     </a>

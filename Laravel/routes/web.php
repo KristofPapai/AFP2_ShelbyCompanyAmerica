@@ -21,11 +21,12 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/', [MainController::class, 'main']);
         Route::get('/main', [MainController::class, 'main']);
         Route::post('/main', [MainController::class, 'main']);
-        Route::get('/login', [MainController::class, 'login']);
         Route::get('/logout', [MainController::class, 'logout']);
         Route::get('/options', [MainController::class, 'options'])->name('options');
         Route::get('/useroptions', [MainController::class, 'useroptions'])->name('useroptions');
         Route::get('/courseoptions', [MainController::class, 'courseoptions'])->name('courseoptions');
+        Route::get('/listcourses', [MainController::class, 'listcourses'])->name('listcourses');
+        Route::get('/addcourse', [MainController::class, 'addcourse'])->name('addcourse');
         Route::post('/useroptionscheck', [MainController::class, 'useroptionscheck']);
         Route::post('/checkcoursesingle', [MainController::class, 'checkcoursesingle']);
         Route::post('/checkcoursemultiple', [MainController::class, 'checkcoursemultiple']);

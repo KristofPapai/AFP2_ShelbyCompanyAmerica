@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('student_id',6);
             $table->timestamp('updated_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
-            $table->foreign('course_id')->references('course_id')->on('course');
+            $table->foreign('course_id')->references('course_id')->on('courses');
             $table->foreign('student_id')->references('neptun')->on('users');
         });
     }

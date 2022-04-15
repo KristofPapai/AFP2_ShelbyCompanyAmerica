@@ -30,7 +30,7 @@ return new class extends Migration
         });
 
         DB::table('users')->insert([
-            'neptun'=>'AAA123',
+            'neptun'=>'AAA111',
             'password'=> Hash::make('admin'),
             'name'=>'Admin',
             'code'=>'',

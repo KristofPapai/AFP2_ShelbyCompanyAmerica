@@ -1,15 +1,14 @@
 <?php
 namespace  App\Http\Controllers;
+
+use App\Models\Course;
 use App\Models\Timetable;
 
 use App\Models\user;
 use Illuminate\Http\Request;
-use Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
-use Vtiful\Kernel\Excel;
 
 class MainController extends Controller
 {
@@ -27,6 +26,13 @@ class MainController extends Controller
     }
     public function courseoptions(){
         return view('course_options');
+    }
+    public function listcourses(){
+        $records = Course::all();
+        return view('list_course', ['records' => $records]);
+    }
+    public function addcourse(){
+        return view('add_course');
     }
 
     function useroptionscheck(Request $request){
