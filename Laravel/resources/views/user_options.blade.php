@@ -67,12 +67,13 @@
                 <optgroup label="Alap beállítások">
                     <option value="{{route('options')}}">Beállítások</option>
                 </optgroup>
-                <!--TODO: Jogosultság ellenőrzés-->
+                @if ($user->legitimacy == 1)
                 <optgroup label="Felhasználó beállítások">
-                    <option value="{{asset('courseoptions')}}">Kurzus hozzárendelés</option>
-                    <option value="{{asset('addcourse')}}">Kurzus létrehozása</option>
-                    <option value="{{asset('useroptions')}}">Beállítások</option>
+                  <option value="{{asset('courseoptions')}}">Kurzus hozzárendelés</option>
+                  <option value="{{asset('addcourse')}}">Kurzus létrehozása</option>
+                  <option value="{{asset('useroptions')}}">Beállítások</option>
                 </optgroup>
+                @endif
             </select>
         </li>
         <li>
@@ -84,10 +85,11 @@
 <div>
     <form method="post" action='/useroptionscheck'>
         @csrf
-        Név: <input type="text" name="name" required value=""><br></br>
-        Új jelszó: <input id="password_change" disabled type="password"  name="new_password" required value="">
+        Neptun: <input type="text" name="neptun"><br></br>
+        Név: <input type="text" name="name"><br></br>
+        Új jelszó: <input id="password_change" disabled type="password"  name="new_password">
         <input name="password" onclick="enablePass()" id="password" type="checkbox"><br></br>
-        Jogosultság: <input id="auth_change" disabled type="text" name="new_auth" required value="">
+        Jogosultság: <input id="auth_change" disabled type="text" name="new_auth">
         <input name="auth" onclick="enableAuth()" id="auth" type="checkbox"><br></br>
         <input type="submit" name="submit" value="Megváltoztatás">
     </form>

@@ -56,12 +56,13 @@
                 <optgroup label="Alap beállítások">
                     <option value="{{route('options')}}">Beállítások</option>
                 </optgroup>
-                <!--TODO: Jogosultság ellenőrzés-->
+                @if ($user->legitimacy == 1)
                 <optgroup label="Felhasználó beállítások">
-                    <option value="{{asset('courseoptions')}}">Kurzus hozzárendelés</option>
-                    <option value="{{asset('addcourse')}}">Kurzus létrehozása</option>
-                    <option value="{{asset('useroptions')}}">Beállítások</option>
+                  <option value="{{asset('courseoptions')}}">Kurzus hozzárendelés</option>
+                  <option value="{{asset('addcourse')}}">Kurzus létrehozása</option>
+                  <option value="{{asset('useroptions')}}">Beállítások</option>
                 </optgroup>
+                @endif
             </select>
           </li>
           <li>
@@ -71,10 +72,12 @@
     </nav>
     <br/>
     @if ($records->isEmpty())
-        <p>Nincs egyetlen kúrzusra se felíratkozva</p>
+        <p>Nincs egyetlen kurzusra se felíratkozva</p>
     @else
         @foreach ($records as $record)
-            <p>{{ $record->course_name }}</p>
+            <p>Kurzus id: {{ $record->course_id }}</p>
+            <p>Kurzus neve: {{ $record->course_name }}</p>
+            <P>Tanár neptun kódja: {{ $record->teacher_id }}</P>
         @endforeach    
     @endif
 </body>
