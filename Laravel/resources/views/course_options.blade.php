@@ -82,12 +82,13 @@
                     <optgroup label="Alap beállítások">
                         <option value="{{route('options')}}">Beállítások</option>
                     </optgroup>
-                    <!--TODO: Jogosultság ellenőrzés-->
+                    @if ($user->legitimacy == 1)
                     <optgroup label="Felhasználó beállítások">
                         <option value="{{asset('courseoptions')}}">Kurzus hozzárendelés</option>
                         <option value="{{asset('addcourse')}}">Kurzus létrehozása</option>
                         <option value="{{asset('useroptions')}}">Beállítások</option>
                     </optgroup>
+                    @endif
                 </select>
             </li>
             <li>

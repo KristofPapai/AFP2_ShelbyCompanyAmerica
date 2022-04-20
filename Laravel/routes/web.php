@@ -16,6 +16,7 @@ use App\Http\Middleware\LoggedInMiddleware;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//TODO: jog ellenőrzése route-nál
 Route::group(['middleware' => 'web'], function () {
     Route::group(['middleware' => [LoggedInMiddleware::class]], function() {
         Route::get('/', [MainController::class, 'main']);
