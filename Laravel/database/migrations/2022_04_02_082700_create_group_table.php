@@ -17,6 +17,7 @@ return new class extends Migration
         Schema::create('student_group', function (Blueprint $table) {
             $table->integer('group_id')->primary();
             $table->string('group_name', 150);
+            $table->timestamps();
         });
         DB::table('student_group')->insert([
             'group_id'=>'1',

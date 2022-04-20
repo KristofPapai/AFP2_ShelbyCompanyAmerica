@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -17,11 +18,14 @@ return new class extends Migration
             $table->integer('id')->autoIncrement();
             $table->string('course_id',4);
             $table->string('student_id',6);
-            $table->timestamp('updated_at')->useCurrent();
-            $table->timestamp('created_at')->useCurrent();
+            $table->timestamps();
             $table->foreign('course_id')->references('course_id')->on('courses');
             $table->foreign('student_id')->references('neptun')->on('users');
         });
+        DB::table('timetables')->insert([
+            'course_id' => 'AAAA',
+            'student_id' => 'AAA112'
+        ]);
     }
 
     /**
