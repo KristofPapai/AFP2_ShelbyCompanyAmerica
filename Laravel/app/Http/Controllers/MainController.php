@@ -16,40 +16,74 @@ class MainController extends Controller
         return view('login');
     }
     public function main(){
-        return view('main');
+        $user = user::find(Auth::id());
+        return view('main', ['user' => $user]);
     }
     public function options(){
-        return view('options');
+        $user = user::find(Auth::id());
+        return view('options',['user' => $user]);
     }
     public function useroptions(){
-        return view('user_options');
+        $user = user::find(Auth::id());
+        return view('user_options', ['user' => $user]);
     }
     public function courseoptions(){
-        return view('course_options');
+        $user = user::find(Auth::id());
+        return view('course_options', ['user' => $user]);
     }
     public function listcourses(){
-        $records = Course::all();
-        return view('list_course', ['records' => $records]);
+        $user = user::find(Auth::id());
+        $records = Timetable::join('courses','courses.course_id', '=', 'timetables.course_id')->join('users', 'users.neptun', '=', 'timetables.student_id')->where('users.neptun', Auth::id())->get(['courses.*']);
+        return view('list_course', ['records' => $records, 'user' => $user]);
     }
     public function addcourse(){
-        return view('add_course');
+        $user = user::find(Auth::id());
+        return view('add_course', ['user' => $user]);
     }
 
     function useroptionscheck(Request $request){
-        //TODO: Adatbázisban megváltoztatni az értékeket
+        $updateuser = user::find($request->neptun);
+        if($updateuser == null){
+            return back()->with('Error', 'There is no user with this neptun');
+        }
         switch (true) {
-            case $request->filled('new_password'):
-                dd('valami');
+            case $request->filled('name') && !$request->filled('new_password') && !$request->filled('new_auth'):
+                $updateuser -> name = $request-> name;
+                $updateuser->save();
                 break;
-            case $request->filled('new_auth'):
-                dd('valami2');
+            case $request->filled('name') && $request->filled('new_password') && !$request->filled('new_auth'):
+                $updateuser -> name = $request-> name;
+                $updateuser -> password = Hash::make($request -> new_password);
+                $updateuser->save();
                 break;
-            case $request->filled('new_password') && $request->filled('new_auth'):
-                dd('valami3');
+            case $request->filled('name') && $request->filled('new_auth') && !$request->filled('new_password'):
+                $updateuser -> name = $request-> name;
+                $updateuser -> legitimacy = $request-> new_auth;
+                $updateuser->save();
+                break;    
+            case $request->filled('name') && $request->filled('new_password') && $request->filled('new_auth'):
+                $updateuser -> name = $request-> name;
+                $updateuser -> password = Hash::make($request-> new_password);
+                $updateuser -> legitimacy = $request-> new_auth;
+                $updateuser->save();
+                break; 
+            case $request->filled('new_password') && !$request->filled('name') && !$request->filled('new_auth'):
+                $updateuser -> password = Hash::make($request-> new_password);
+                $updateuser->save();
+                break;
+            case $request->filled('new_password') && $request->filled('new_auth') && !$request->filled('name'):
+                $updateuser -> password = Hash::make($request-> new_password);
+                $updateuser -> legitimacy = $request-> new_auth;
+                $updateuser->save();
+                break;
+            case $request->filled('new_auth') && !$request->filled('new_password') && !$request->filled('name'):
+                $updateuser -> legitimacy = $request-> new_auth;
+                $updateuser->save();
                 break;
             default:
                 break;
         }
+        return redirect('/main');
 
     }
 
