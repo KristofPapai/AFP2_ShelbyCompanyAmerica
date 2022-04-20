@@ -95,7 +95,7 @@
                 <a href="{{asset('logout')}}" class="text-2xl hover:text-yellow-500 duration-500 font-bold w-52">Kijelentkezés</a>
             </li>
         </ul>
-    </nav> 
+    </nav>
 
 
     <form enctype="multipart/form-data" method="post" action='/checkcoursesingle'>
@@ -108,10 +108,11 @@
         </select>
         <input disabled id="courseMultSubmit" type="submit" name="submit" value="Hozzárendelés">
         <input id="Mult" name="courseMult" onclick="enableMultUpl()" type="checkbox"><br></br>
+    </form>
+    <form method="post" action='/checkcoursesingle'>
+        @csrf
         Neptun-Kód <input disabled id="courseSinglNeptun" type="text" name="neptun" required value="">
         Kurzus
-    </form>
-    <form method="post" action='/checkcoursemultiple'>
         <!--TODO: dinamikus kurzus dropdown a tanár szempontjából-->
         <select disabled id="courseSinglCourse">
             <option value="Kurzus">Valami</option>
@@ -121,6 +122,7 @@
     </form>
     <!--TODO: Ha lesz navbar ez elengedhető-->
     <form method="get" action='/main'>
+        @csrf
         <input type="submit" name="submit" value="Vissza">
     </form>
 </div>
