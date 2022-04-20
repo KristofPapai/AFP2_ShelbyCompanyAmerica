@@ -23,51 +23,28 @@ return new class extends Migration
             $table->string('email',100);
             $table->tinyInteger('legitimacy')->default(0);
             $table->integer('group_id')->default(1);
-            $table->timestamp('updated_at')->useCurrent();
-            $table->timestamp('created_at')->useCurrent();
+            $table->timestamps();
             $table->rememberToken();
             $table->foreign('group_id')->references('group_id')->on('student_group');
         });
 
         DB::table('users')->insert([
-            'neptun'=>'AAA123',
+            'neptun'=>'AAA111',
             'password'=> Hash::make('admin'),
             'name'=>'Admin',
             'code'=>'',
             'email'=>'shelby.america.12@gmail.com',
+            'legitimacy' => 1,
             'group_id'=>2
         ]);
         DB::table('users')->insert([
-            'neptun'=>'Y0DM28',
-            'password'=> Hash::make('admin'),
-            'name'=>'Admin',
+            'neptun'=>'AAA112',
+            'password'=> Hash::make('user'),
+            'name'=>'User',
             'code'=>'',
             'email'=>'shelby.america.12@gmail.com',
-            'group_id'=>2
-        ]);
-        DB::table('users')->insert([
-            'neptun'=>'BNTET0',
-            'password'=> Hash::make('admin'),
-            'name'=>'Admin',
-            'code'=>'',
-            'email'=>'shelby.america.12@gmail.com',
-            'group_id'=>2
-        ]);
-        DB::table('users')->insert([
-            'neptun'=>'WGXNP2',
-            'password'=> Hash::make('admin'),
-            'name'=>'Admin',
-            'code'=>'',
-            'email'=>'shelby.america.12@gmail.com',
-            'group_id'=>2
-        ]);
-        DB::table('users')->insert([
-            'neptun'=>'BWQ1BU',
-            'password'=> Hash::make('admin'),
-            'name'=>'Admin',
-            'code'=>'',
-            'email'=>'shelby.america.12@gmail.com',
-            'group_id'=>2
+            'legitimacy' => 0,
+            'group_id'=>1
         ]);
     }
 

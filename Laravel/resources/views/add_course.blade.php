@@ -1,4 +1,5 @@
-<!doctype html>
+<!--TODO: Kurzus létrehozása function, design-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <title>E-Learning Felhasználó Beállítások</title>
+    <title>E-Learning</title>
     <style>
         body {
             font-family: "Inter", sans-serif;
@@ -32,18 +33,6 @@
             }
         }
     </style>  
-    <script>
-        function enablePass() {
-            var pass = document.getElementById("password");
-            var new_pass = document.getElementById("password_change")
-            new_pass.disabled = !pass.checked;
-        }
-        function enableAuth(){
-            var auth = document.getElementById("auth");
-            var new_auth = document.getElementById("auth_change")
-            new_auth.disabled = !auth.checked;
-        }
-    </script>
 </head>
 <body class="body-bg min-h-screen  pb-6 px-2 md:px-0 bg-gradient-to-r from-indigo-500 via-red-500 to-yellow-500 background-animate" style="font-family:'Lato',sans-serif;">
     <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between rounded-lg">
@@ -57,11 +46,11 @@
           </span>
         </div>
     
-    <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
-        <li class="mx-4 my-6 md:my-0">
+        <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+          <li class="mx-4 my-6 md:my-0">
             <a href="{{ asset('listcourses') }}" class="text-2xl hover:text-yellow-500 duration-500 font-bold">Kurzusok</a>
-        </li>
-        <li class="mx-4 my-6 md:my-0">
+          </li>
+          <li class="mx-4 my-6 md:my-0">
             <select onchange="window.location.href=this.value;" class="text-2xl hover:text-yellow-500 duration-500 font-bold w-52">
                 <option hidden value="" disabled selected >Beállítások</option>
                 <optgroup label="Alap beállítások">
@@ -75,28 +64,19 @@
                 </optgroup>
                 @endif
             </select>
-        </li>
-        <li>
+          </li>
+          <li>
             <a href="{{asset('logout')}}" class="text-2xl hover:text-yellow-500 duration-500 font-bold w-52">Kijelentkezés</a>
-        </li>
-    </ul>
-</nav>
-<br/>
-<div>
-    <form method="post" action='/useroptionscheck'>
-        @csrf
-        Neptun: <input type="text" name="neptun"><br></br>
-        Név: <input type="text" name="name"><br></br>
-        Új jelszó: <input id="password_change" disabled type="password"  name="new_password">
-        <input name="password" onclick="enablePass()" id="password" type="checkbox"><br></br>
-        Jogosultság: <input id="auth_change" disabled type="text" name="new_auth">
-        <input name="auth" onclick="enableAuth()" id="auth" type="checkbox"><br></br>
-        <input type="submit" name="submit" value="Megváltoztatás">
+          </li>
+        </ul>
+    </nav>
+    <br/>
+    <form>
+        <label>Kúrzus id (4 hosszú)</label>
+        <input type="text" name="course_id" required><br/>
+        <label>Kurzus neve</label>
+        <input type="text" name="course_name" required><br/>
+        <button type="submit" name="add">Létrehozás</button>
     </form>
-    <!--TODO: Ha lesz navbar ez elengedhető-->
-    <form method="get" action='/main'>
-        <input type="submit" name="submit" value="Vissza">
-    </form>
-</div>
 </body>
 </html>

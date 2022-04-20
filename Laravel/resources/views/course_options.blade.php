@@ -74,7 +74,7 @@
 
         <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
             <li class="mx-4 my-6 md:my-0">
-                <a href="#" class="text-2xl hover:text-yellow-500 duration-500 font-bold">Kurzusok</a>
+                <a href="{{ asset('listcourses') }}" class="text-2xl hover:text-yellow-500 duration-500 font-bold">Kurzusok</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
                 <select onchange="window.location.href=this.value;" class="text-2xl hover:text-yellow-500 duration-500 font-bold w-52">
@@ -82,11 +82,13 @@
                     <optgroup label="Alap beállítások">
                         <option value="{{route('options')}}">Beállítások</option>
                     </optgroup>
-                    <!--TODO: Jogosultság ellenőrzés-->
+                    @if ($user->legitimacy == 1)
                     <optgroup label="Felhasználó beállítások">
                         <option value="{{asset('courseoptions')}}">Kurzus hozzárendelés</option>
+                        <option value="{{asset('addcourse')}}">Kurzus létrehozása</option>
                         <option value="{{asset('useroptions')}}">Beállítások</option>
                     </optgroup>
+                    @endif
                 </select>
             </li>
             <li>
