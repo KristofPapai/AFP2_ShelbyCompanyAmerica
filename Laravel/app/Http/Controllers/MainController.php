@@ -60,13 +60,13 @@ class MainController extends Controller
                 $updateuser -> name = $request-> name;
                 $updateuser -> legitimacy = $request-> new_auth;
                 $updateuser->save();
-                break;    
+                break;
             case $request->filled('name') && $request->filled('new_password') && $request->filled('new_auth'):
                 $updateuser -> name = $request-> name;
                 $updateuser -> password = Hash::make($request-> new_password);
                 $updateuser -> legitimacy = $request-> new_auth;
                 $updateuser->save();
-                break; 
+                break;
             case $request->filled('new_password') && !$request->filled('name') && !$request->filled('new_auth'):
                 $updateuser -> password = Hash::make($request-> new_password);
                 $updateuser->save();
@@ -139,9 +139,10 @@ class MainController extends Controller
     }
     function checkcoursesingle(Request $request) {
         $tTable = new Timetable();
-        $tTable -> course_id = 'Vala';
-        $tTable -> student_id = $request;
+        $tTable -> course_id = 'AAAA';
+        $tTable -> student_id = $request->get('neptun');
         $tTable -> save();
+        return redirect('/courseoptions');
     }
 
     function successlogin()
