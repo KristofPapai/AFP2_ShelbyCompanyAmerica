@@ -32,7 +32,7 @@
             background-position: 100% 50%;
             }
         }
-    </style>  
+    </style>
 </head>
 <body class="body-bg min-h-screen  pb-6 px-2 md:px-0 bg-gradient-to-r from-indigo-500 via-red-500 to-yellow-500 background-animate" style="font-family:'Lato',sans-serif;">
     <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between rounded-lg">
@@ -40,12 +40,12 @@
           <span class="text-2xl font-bold cursor-pointer">
             MyLearning
           </span>
-    
+
           <span class="text-3xl cursor-pointer mx-2 md:hidden block">
             <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
           </span>
         </div>
-    
+
         <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
           <li class="mx-4 my-6 md:my-0">
             <a href="{{ asset('listcourses') }}" class="text-2xl hover:text-yellow-500 duration-500 font-bold">Kurzusok</a>
@@ -75,10 +75,10 @@
         <p>Nincs egyetlen kurzusra se felíratkozva</p>
     @else
         @foreach ($records as $record)
-            <p>Kurzus id: {{ $record->course_id }}</p>
+            <p>Kurzus id: <a href="{{route('course',$record->course_id)}}"> {{ $record->course_id }}</p>
             <p>Kurzus neve: {{ $record->course_name }}</p>
             <P>Tanár neptun kódja: {{ $record->teacher_id }}</P>
-        @endforeach    
+        @endforeach
     @endif
 </body>
 </html>
