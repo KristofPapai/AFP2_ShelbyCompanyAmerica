@@ -2,6 +2,7 @@
 namespace  App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\CoursePost;
 use App\Models\Timetable;
 
 use App\Models\user;
@@ -145,6 +146,16 @@ class MainController extends Controller
         return redirect('/courseoptions');
     }
 
+    function course($course_id) {
+        $course = Course::findOrFail($course_id);
+        return view('course',['course_id'=>$course])->with($course_id);
+    }
+    function coursepostdestroy($item){
+        $course_post = CoursePost::findOrFail($item);
+        $course_id = $course_post->course_id;
+        $course_post->delete();
+        return redirect()->route('course', ['id'=>$course_id]);
+    }
     function successlogin()
     {
         return view('main');
