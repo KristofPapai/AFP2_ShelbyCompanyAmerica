@@ -150,6 +150,10 @@ class MainController extends Controller
         $course = Course::findOrFail($course_id);
         return view('course',['course_id'=>$course])->with($course_id);
     }
+    function coursepost($post_id) {
+        $course_post = CoursePost::findOrFail($post_id);
+        return view('course_post',['post_id'=>$course_post])->with($post_id);
+    }
     function coursepostdestroy($item){
         $course_post = CoursePost::findOrFail($item);
         $course_id = $course_post->course_id;
