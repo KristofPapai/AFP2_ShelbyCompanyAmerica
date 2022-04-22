@@ -32,6 +32,8 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/checkcoursesingle', [MainController::class, 'checkcoursesingle']);
         Route::post('/checkcoursemultiple', [MainController::class, 'checkcoursemultiple']);
         Route::post('/checkpassword', [MainController::class, 'checkpassword']);
+        Route::get('/course/{id}', [MainController::class, 'course'])->name('course');
+        Route::post('/coursepostdestroy/{id}', [MainController::class, 'coursepostdestroy'])->name('coursepostdestroy');
     });
 
     Route::group(['middleware' => [GuestMiddleware::class]], function() {
