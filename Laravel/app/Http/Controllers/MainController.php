@@ -126,7 +126,19 @@ class MainController extends Controller
         return redirect('/main');
     }
 
-    //TODO: insert into diák kurzus
+    function create_course_post($course_id, Request $request){
+        $request->validate([
+            'post_title'=>'required',
+            'post_content'=>'required'
+        ]);
+        $coursepost = new CoursePost();
+        $coursepost->course_id = $course_id;
+        $coursepost->post_name = $request->post_title;
+        $coursepost->post = $request->post_content;
+        $coursepost->save();
+        return redirect()->route('course', ['id'=>$course_id]);
+    }
+
     function checkcoursemultiple(Request $request) {
         $uploadedFile = $request->file('courseMultNeptun');
         $data = array_map('str_getcsv', file($uploadedFile));
@@ -155,7 +167,7 @@ class MainController extends Controller
         return view('course_post',['post_id'=>$course_post])->with($post_id);
     }
     function coursepostcreate($course_id){
-        return view('course_post_create')->with($course_id);
+        return view('course_post_create', ['course_id' => $course_id])->with($course_id);
     }
     function coursepostdestroy($item){
         $course_post = CoursePost::findOrFail($item);
