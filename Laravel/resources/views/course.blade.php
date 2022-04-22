@@ -3,7 +3,7 @@
 @section('content')
 {{$course_name}}
     @if(App\Models\User::findOrFail(Auth::id())->legitimacy!=0)
-        <form>
+        <form action="{{route('coursepostcreate',$course_id->course_id)}}" method="GET">
             @csrf
             <input value="Anyag létrehozása" type="submit">
         </form>
