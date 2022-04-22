@@ -35,6 +35,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/course/{id}', [MainController::class, 'course'])->name('course');
         Route::get('/coursepost/{id}', [MainController::class, 'coursepost'])->name('coursepost');
         Route::get('/coursepostcreate{id}', [MainController::class, 'coursepostcreate'])->name('coursepostcreate');
+        Route::post('/createcoursepost/{id}', [MainController::class, 'create_course_post'])->name('createcoursepost');
         Route::post('/coursepostdestroy/{id}', [MainController::class, 'coursepostdestroy'])->name('coursepostdestroy');
     });
 
