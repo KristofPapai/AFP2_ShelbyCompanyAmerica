@@ -179,6 +179,14 @@ class MainController extends Controller
     {
         return view('main');
     }
+    function createcourse(Request $request)
+    {
+        $course['course_id'] = $request['course_id']; 
+        $course['course_name'] = $request['course_name']; 
+
+        elearning::table('courses')->insert($course);
+        return view('main');
+    }
 
     function logout()
     {
