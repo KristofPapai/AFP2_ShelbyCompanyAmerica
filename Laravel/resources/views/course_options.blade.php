@@ -97,34 +97,36 @@
         </ul>
     </nav>
 
-
-    <form enctype="multipart/form-data" method="post" action='/checkcoursesingle'>
-        @csrf
-        Neptun-kódok (.csv)<input name="courseMultNeptun" id="courseMultNeptun" disabled type="file" accept=".csv" />
-        Kurzus
-        <!--TODO: dinamikus kurzus dropdown a tanár szempontjából-->
-        <select disabled id="courseMultCourse">
-            <option value="Kurzus">Valami</option>
-        </select>
-        <input disabled id="courseMultSubmit" type="submit" name="submit" value="Hozzárendelés">
-        <input id="Mult" name="courseMult" onclick="enableMultUpl()" type="checkbox"><br></br>
-    </form>
-    <form method="post" action='/checkcoursesingle'>
-        @csrf
-        Neptun-Kód <input disabled id="courseSinglNeptun" type="text" name="neptun" required value="">
-        Kurzus
-        <!--TODO: dinamikus kurzus dropdown a tanár szempontjából-->
-        <select disabled id="courseSinglCourse">
-            <option value="Kurzus">Valami</option>
-        </select>
-        <input disabled id="courseSinglSubmit" type="submit" name="submit" value="Hozzárendelés">
-        <input id="Singl" name="courseSingl" onclick="enableSinglUpl()" type="checkbox">
-    </form>
-    <!--TODO: Ha lesz navbar ez elengedhető-->
-    <form method="get" action='/main'>
-        @csrf
-        <input type="submit" name="submit" value="Vissza">
-    </form>
+    <main class="bg-white max-w-xl mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
+        <form enctype="multipart/form-data" method="post" action='/checkcoursesingle'>
+            @csrf
+            Neptun-kódok (.csv)<input name="courseMultNeptun" id="courseMultNeptun" disabled type="file" accept=".csv" />
+            Kurzus
+            <!--TODO: dinamikus kurzus dropdown a tanár szempontjából-->
+            <select disabled id="courseMultCourse">
+                <option value="Kurzus">Valami</option>
+            </select>
+            <input disabled id="courseMultSubmit" type="submit" name="submit" value="Hozzárendelés">
+            <input id="Mult" name="courseMult" onclick="enableMultUpl()" type="checkbox"><br></br>
+        </form>
+        <form method="post" action='/checkcoursesingle'>
+            @csrf
+            Neptun-Kód <input disabled id="courseSinglNeptun" type="text" name="neptun" required value="">
+            Kurzus
+            <!--TODO: dinamikus kurzus dropdown a tanár szempontjából-->
+            <select disabled id="courseSinglCourse">
+                <option value="Kurzus">Valami</option>
+            </select>
+            <input disabled id="courseSinglSubmit" type="submit" name="submit" value="Hozzárendelés">
+            <input id="Singl" name="courseSingl" onclick="enableSinglUpl()" type="checkbox">
+        </form>
+        <!--TODO: Ha lesz navbar ez elengedhető-->
+        <form method="get" action='/main' class="flex flex-col">
+            @csrf
+            <button class="border-t-2 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit" name="submit">Vissza</button>
+        </form>
+    </main>
+    
 </div>
 </body>
 </html>
