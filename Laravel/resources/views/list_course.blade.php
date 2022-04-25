@@ -71,14 +71,16 @@
         </ul>
     </nav>
     <br/>
-    @if ($records->isEmpty())
-        <p>Nincs egyetlen kurzusra se felíratkozva</p>
-    @else
-        @foreach ($records as $record)
-            <p>Kurzus id: <a href="{{route('course',$record->course_id)}}"> {{ $record->course_id }}</p>
-            <p>Kurzus neve: {{ $record->course_name }}</p>
-            <P>Tanár neptun kódja: {{ $record->teacher_id }}</P>
-        @endforeach
-    @endif
+    <main class="bg-white max-w-xl mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
+      @if ($records->isEmpty())
+          <p>Nincs egyetlen kurzusra se felíratkozva</p>
+      @else
+          @foreach ($records as $record)
+              <p>Kurzus id: <a href="{{route('course',$record->course_id)}}"> {{ $record->course_id }}</p>
+              <p>Kurzus neve: {{ $record->course_name }}</p>
+              <P>Tanár neptun kódja: {{ $record->teacher_id }}</P>
+          @endforeach
+      @endif
+    </main>
 </body>
 </html>
