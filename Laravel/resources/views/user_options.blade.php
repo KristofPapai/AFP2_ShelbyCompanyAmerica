@@ -82,13 +82,13 @@
     </ul>
 </nav>
 <br/>
-<div>
+<main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
     <form method="post" action='/useroptionscheck'>
         @csrf
-        Neptun: <input type="text" name="neptun"><br></br>
-        Név: <input type="text" name="name"><br></br>
-        Új jelszó: <input id="password_change" disabled type="password"  name="new_password">
-        <input name="password" onclick="enablePass()" id="password" type="checkbox"><br></br>
+        Neptun: <input type="text" name="neptun" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3"><br></br>
+        Név: <input type="text" name="name" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3"><br></br>
+        Új jelszó: <input id="password_change" disabled type="password"  name="new_password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3">
+        <input name="password" onclick="enablePass()" id="password" type="checkbox" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3"><br></br>
         Jogosultság: <input id="auth_change" disabled type="text" name="new_auth">
         <input name="auth" onclick="enableAuth()" id="auth" type="checkbox"><br></br>
         <input type="submit" name="submit" value="Megváltoztatás">
@@ -97,6 +97,7 @@
     <form method="get" action='/main'>
         <input type="submit" name="submit" value="Vissza">
     </form>
+</main>
 </div>
 </body>
 </html>
