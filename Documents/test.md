@@ -1,5 +1,5 @@
 # Tesztjegyzőkönyv
-Teszteléseket végezte: Pápai Kristóf Levente
+Teszteléseket végezte: Pápai Kristóf Levente/Beregszászi Bence/Banyik Nándor
 
 Operációs rendszer: Windows 10
 
