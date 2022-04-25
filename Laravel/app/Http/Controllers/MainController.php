@@ -34,7 +34,12 @@ class MainController extends Controller
     }
     public function listcourses(){
         $user = user::find(Auth::id());
-        $records = Timetable::join('courses','courses.course_id', '=', 'timetables.course_id')->join('users', 'users.neptun', '=', 'timetables.student_id')->where('users.neptun', Auth::id())->get(['courses.*']);
+        if($user->legitimacy == 1){
+            $records = Course::all();
+        }
+        else {
+            $records = Timetable::join('courses','courses.course_id', '=', 'timetables.course_id')->join('users', 'users.neptun', '=', 'timetables.student_id')->where('users.neptun', Auth::id())->get(['courses.*']);
+        }
         return view('list_course', ['records' => $records, 'user' => $user]);
     }
     public function addcourse(){
