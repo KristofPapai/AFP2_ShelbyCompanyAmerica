@@ -13,3 +13,4 @@ elvégzett tesztek elvárásai és eredményei.
 | Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
 | :---: | --- | --- | --- | --- |
 | Adatbázis | 2022.04.25. | A tárolt kurzusok és felhasználók védett módon jól vannak tárolva. | A táblák az oldal által küldött adatokat sikeresen el tudja tárolni. | Nem találtam hibát. |
+| Menüpontok | 2022.04.25. | Menüpontok segítségével navigálás az oldalak között. | Minden menüpont a megfelelő oldalt jelenítette meg. | Nem találtam hibát. |
