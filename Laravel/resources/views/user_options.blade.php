@@ -83,7 +83,7 @@
 </nav>
 <br/>
 <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
-    <form method="post" action='/useroptionscheck'>
+    <form method="post" action='/useroptionscheck' class="flex flex-col">
         @csrf
         Neptun: <input type="text" name="neptun" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3"><br></br>
         Név: <input type="text" name="name" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3"><br></br>
@@ -91,13 +91,10 @@
         <input name="password" onclick="enablePass()" id="password" type="checkbox" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3"><br></br>
         Jogosultság: <input id="auth_change" disabled type="text" name="new_auth" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3">
         <input name="auth" onclick="enableAuth()" id="auth" type="checkbox" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3"><br></br>
+        <button type="submit" name="submit" value="Megváltoztatás" class="border-t-2 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200">Megváltoztatás</button>
     </form>
     <!--TODO: Ha lesz navbar ez elengedhető-->
     <form method="get" action='/main' class="flex flex-col">
-        @csrf
-
-        <button type="submit" name="submit" value="Megváltoztatás" class="border-t-2 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200">Megváltoztatás</button>
-
         <button type="submit" name="submit" class="border-t-2 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200">Vissza</button>
 
     </form>
