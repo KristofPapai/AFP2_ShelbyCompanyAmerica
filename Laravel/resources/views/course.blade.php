@@ -5,7 +5,7 @@
     @if(App\Models\User::findOrFail(Auth::id())->legitimacy!=0)
         <form action="{{route('coursepostcreate',$course_id->course_id)}}" method="GET">
             @csrf
-            <input value="Anyag létrehozása" type="submit">
+            <input value="Anyag létrehozása" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">
         </form>
     @endif
     @if($records = App\Models\CoursePost::orderBy('post_id','asc')->get())
@@ -16,7 +16,7 @@
                     <td>
                         <form action="{{route('coursepostdestroy', $item)}}" method="POST">
                             @csrf
-                            <button type="submit">Törlés</button>
+                            <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200">Törlés</button>
                         </form>
                     </td>
                 @endif
