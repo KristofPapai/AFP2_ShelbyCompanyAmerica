@@ -123,7 +123,7 @@
         <!--TODO: Ha lesz navbar ez elengedhető-->
         <form method="get" action='/main' class="flex flex-col">
             @csrf
-            <button class="border-t-2 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit" name="submit">Vissza</button>
+            <button class="border-t-2 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit" name="submit">Befejezés</button>
         </form>
     </main>
     
