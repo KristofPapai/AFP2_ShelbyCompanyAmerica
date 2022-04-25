@@ -37,6 +37,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/coursepostcreate{id}', [MainController::class, 'coursepostcreate'])->name('coursepostcreate');
         Route::post('/createcoursepost/{id}', [MainController::class, 'create_course_post'])->name('createcoursepost');
         Route::post('/coursepostdestroy/{id}', [MainController::class, 'coursepostdestroy'])->name('coursepostdestroy');
+        Route::post('/createcourse', [MainController::class, 'createcourse']);
     });
 
     Route::group(['middleware' => [GuestMiddleware::class]], function() {

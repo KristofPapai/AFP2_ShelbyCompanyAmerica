@@ -181,11 +181,12 @@ class MainController extends Controller
     }
     function createcourse(Request $request)
     {
-        $course['course_id'] = $request['course_id']; 
-        $course['course_name'] = $request['course_name']; 
-
-        elearning::table('courses')->insert($course);
-        return view('main');
+        $create_course = new Course();
+        $create_course->course_id = $request->course_id;
+        $create_course->course_name = $request->course_name;
+        $create_course->teacher_id = Auth::id();
+        $create_course->save();
+        return redirect('/main');
     }
 
     function logout()
