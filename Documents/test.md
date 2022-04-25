@@ -19,3 +19,12 @@ elvégzett tesztek elvárásai és eredményei.
 | Autentikáció | 2022.04.25. | Csak felhasználói fiók azonosítása után tudjunk hozzáférni a rendszerhez bizonyos funkcióihoz (Kilistázás, módosítás, törlés, hozzáadás, statisztika). | Bejelentkezés nélkül nem értem el az oldal funkcióját. | Nem találtam hibát. |
 | Frontend | 2022.04.25. | A weboldal igényes, letisztult megjelenése. | A menürendszer egyszerű/minimalista, a weboldal intuitív. | Nem találtam hibát. |
 | Backend | 2022.04.25. | A backendben megírt PHP-SQL-jQuery-Ajax kódok megfelelő működése. | A backend kódjai tökéletesen működtek. | Nem találtam hibát. |
+
+A Végleges teszt lezajlott és minden funkció rendesen működik, 
+esztétikailag is megfelelő a weboldal. 
+
+Átadásra készen áll a megrendelőnek.
+
+Befejezve: 2022.04.25
+
+Teszttervet készítette: Pápai Kristóf Levente/Beregszászi Bence/Banyik Nándor
