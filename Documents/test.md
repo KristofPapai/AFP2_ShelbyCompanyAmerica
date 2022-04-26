@@ -16,7 +16,7 @@ elvégzett tesztek elvárásai és eredményei.
 | Autentikáció | 2022.03.15. | Csak felhasználói fiók azonosítása után tudjunk hozzáférni a rendszerhez bizonyos funkcióihoz (Kilistázás, módosítás, törlés, hozzáadás, statisztika). | Bejelentkezés nélkül nem értem el az oldal funkcióját. | Nem találtam hibát. |
 | Backend | 2022.03.15. | A backendben megírt PHP-SQL kódok megfelelő működése. | A backend kódjai tökéletesen működtek. | Nem találtam hibát. |
 
-## Alpha teszt: Banyik Nándor
+## Beta teszt: Banyik Nándor
 | Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
 | :---: | --- | --- | --- | --- |
 | Adatbázis | 2022.03.29. | A tárolt kurzusok és felhasználók védett módon jól vannak tárolva. | A táblák az oldal által küldött adatokat sikeresen el tudja tárolni. | Nem találtam hibát. |
